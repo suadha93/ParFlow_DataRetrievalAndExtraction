@@ -257,7 +257,11 @@ def data_extraction_csv(data_input,lls_indicators):
 
                 fCSV.close()
 
+                print('============')
                 print('csv file saved')
+                print(' ')
+
+
 
 def data_extraction_variable(data_input,llsmask):
 
