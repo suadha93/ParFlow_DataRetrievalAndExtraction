@@ -1,0 +1,16 @@
+
+[
+  {
+    "stationID": "Nippes",
+    "stationLat": 50.97722,
+    "stationLon": 6.92829,
+    "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v2/paw_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v02bJurecaGpuProdClimatologyTl_1hr2daily_20230101-20231231.nc",
+    "startDate": "20230101",
+    "endDate": "20231231",
+    "Depth": 13,
+    "variableStandard_name": "paw",
+    "variableLong_name": "Plant available water"
+  }
+]
+
+
