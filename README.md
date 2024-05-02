@@ -17,6 +17,7 @@ and initialize and update the submodules afterwards
 cd ParFlow_data_extraction_tool
 git submodule init 
 git submodule update
+```
 
 ### Notes
 
