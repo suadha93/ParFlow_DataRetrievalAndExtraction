@@ -18,6 +18,14 @@ cd ParFlow_data_extraction_tool
 git submodule init 
 git submodule update
 ```
+after the repository is cloned, smoe libraries need to be installed
+
+import os
+import sys
+
+cwd = os.getcwd()
+tool_path = f"{cwd}/ParFlowCLM_DE06_data_extraction_tool"
+sys.path.append(tool_path)
 
 ### Notes
 
