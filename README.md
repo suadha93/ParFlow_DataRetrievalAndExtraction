@@ -11,7 +11,12 @@ Clone the repository as usual
 ``` bash
 git clone https://icg4geo.icg.kfa-juelich.de/SoftwareTools/parflowclm_de06_data_extraction_tool.git
 ```
+and initialize and update the submodules afterwards
 
+``` bash
+cd ParFlow_data_extraction_tool
+git submodule init 
+git submodule update
 
 ### Notes
 
