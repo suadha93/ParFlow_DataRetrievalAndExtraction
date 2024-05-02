@@ -28,11 +28,20 @@ tool_path = f"{cwd}/ParFlowCLM_DE06_data_extraction_tool"
 sys.path.append(tool_path)
 ```
 ## Running the script
-## To run the script you will need two files:
+ To run the script you will need two files:
  1. Input file : this is a json file which includes information on the dataset you want to extract from. For an example please check ../examples.
     the file should include the data below:
     ``` bash
-    
+      [
+        { 
+          "stationID": " ",
+          "stationLat":  ,
+          "stationLon": ,
+          "ParFlowData": " ",
+          "Depth": 
+        }
+      ]  
+```
 
 ### Notes
 
