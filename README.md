@@ -48,10 +48,10 @@ sys.path.append(tool_path)
           "Depth": 
         }
       ]  
-```
+     ```
 
 2. The indicator file "DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc". the file is available under ../data
-   This dataset is important to insure that the
+   This dataset is used to extract the latidudes and longitudes, and also it is important to ensure that the selected location does not fall directly in a water body.
 
 
 ### Notes
