@@ -4,7 +4,7 @@ This repository includes scripts and examples to extract time-series or variable
 
 This tool is designed to be able to exract information from ParFlowCLM DE06 for a location without having to download the data.
 
-### Prepare the repository for the extraction tool
+## Prepare the repository for the extraction tool
 
 Clone the repository as usual
 
@@ -28,8 +28,8 @@ tool_path = f"{cwd}/ParFlowCLM_DE06_data_extraction_tool"
 sys.path.append(tool_path)
 ```
 
-### To run the script you will need two files:
-# 1. Input file : this is a json file which includes information on the dataset you want to extract from. For an example please check ../examples.
+## To run the script you will need two files:
+### 1. Input file : this is a json file which includes information on the dataset you want to extract from. For an example please check ../examples.
 
 ### Notes
 
