@@ -18,7 +18,14 @@ cd ParFlow_data_extraction_tool
 git submodule init 
 git submodule update
 ```
-after the repository is cloned, smoe libraries need to be installed
+
+To use the tool within other projects, you have to extend your local PYTHONPATH, to tell python where to find it. You can do this by:
+``` bash
+cd ParFlow_data_extraction_tool
+export PYTHONPATH=$PYTHONPATH:$(pwd)
+```
+after the repository is cloned, some libraries need to be installed
+
 ``` bash
 import os
 import sys
@@ -42,6 +49,10 @@ sys.path.append(tool_path)
         }
       ]  
 ```
+
+2. The indicator file "DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc". the file is available under ../data
+   This dataset is important to insure that the
+
 
 ### Notes
 
