@@ -342,7 +342,7 @@ def data_extraction_variable(data_input,lls_indicators):
                 return var
 
 if __name__ == "__main__":
-
+    lls_indicators = f'{cwd}/../data/DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc'
     data_input="/p/project/pfgpude05/hammoudeh1/ParflowCLM_postpro_scripts/data_extraction/data_input_example_1.json"
     lls_indicators = '/p/project/pfgpude05/hammoudeh1/ParflowCLM_postpro_scripts/data_extraction/DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc'
     data_extraction_csv(data_input,lls_indicators)
