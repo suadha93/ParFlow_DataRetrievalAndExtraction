@@ -2,7 +2,7 @@
 
 This repository includes scripts and examples to extract time-series or variables for a specific location from ParFlowCLM DE06 simulations (https://adapter-projekt.org/). Selected variables are available on THREDDS-server (https://service.tereno.net/thredds/catalog/forecastnrw/products/catalog.html). 
 
-This tool is designed to be able to exract information from ParFlowCLM DE06 for a location without having to download the data.
+This tool is designed to be able to exract information from ParFlowCLM DE06 for a location.
 
 ## Prepare the repository for the extraction tool
 
