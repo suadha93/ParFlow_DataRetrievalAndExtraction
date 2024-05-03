@@ -62,7 +62,10 @@ sys.path.append(tool_path)
 The climatology are stored under climatology_v2
 ![Thredds_server_1](https://github.com/suadha93/ParFlow_data_extraction_tool/assets/139210041/48c844a2-68dd-403e-8a67-7d774a4a1514)
 
-after clicking on the dataset, it will take you to a similar page as below
+After clicking on the dataset, it will take you to a similar page as below. 
+
+![Thredds_server_2](https://github.com/suadha93/ParFlow_data_extraction_tool/assets/139210041/b5aade15-2a03-4b88-b3cc-8e9b1ba52e46)
+
 
 
 ### Notes
