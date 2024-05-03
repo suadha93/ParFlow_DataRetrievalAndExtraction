@@ -50,10 +50,10 @@ sys.path.append(tool_path)
       ]  
      ```
 ### Note
-stationID: enter a name for your station/location 
-stationLat, stationLon: latidue and longitude of the station/location 
-ParFlowData : a path to the dataset in the THREDDS server.  
-The figures below demonstrates an example on how to access the path for the climatology of plant available water dataset
+stationID: enter a name for your station/location\
+stationLat, stationLon: latidue and longitude of the station/location\
+ParFlowData : a path to the dataset in the THREDDS server\
+The figures below demonstrates an example on how to access the path for the climatology of plant available water dataset\
 
 ![Thredds_server_1](https://github.com/suadha93/ParFlow_data_extraction_tool/assets/139210041/25ebd9c1-7df8-4461-946c-2e93d4aa4dcf)
 
