@@ -66,6 +66,9 @@ After clicking on the dataset, it will take you to a similar page as below.
 ![Thredds_server_2](https://github.com/suadha93/ParFlow_data_extraction_tool/assets/139210041/b5aade15-2a03-4b88-b3cc-8e9b1ba52e46)
 
 There are two ways to access the datasets in order to use the extraction tool, the first option is to access it using OPENDAP, where you won't need to download the data, the econd option will be to download the dataset using the HTTPserver.
+If you chose to access the dataset using OPENDAP, you have to copy the data url shown below and add it to the json input file as ParFlowData.
+
+
 
 ### Notes
 
