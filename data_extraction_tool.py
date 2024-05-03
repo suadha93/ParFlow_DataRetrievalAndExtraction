@@ -1,6 +1,4 @@
 
-
-
 """ This module contains three functions designed to extract variables
 from the ParFlow simulations. The first function 
 locates the lower boundary layer containing the specified depth. 
@@ -9,15 +7,12 @@ and writes it in an ASCII file. The third function has similar functionality
 to the function before, but it returns the variable for the location for all depths.
 """
 
-
-
 import numpy as np
 from netCDF4 import Dataset
 from netCDF4 import num2date
 import datetime
 import csv
 import json
-
 
 def spher_dist( lon1, lat1, lon2, lat2, Rearth=6371):
     """ calculate the spherical / haversine distance
@@ -57,7 +52,6 @@ def spher_dist( lon1, lat1, lon2, lat2, Rearth=6371):
 #    print(Rearth * np.arccos(term1 + term2 * term3))
 
     return Rearth * np.arccos(term1+term2*term3)
-
 
 def find_depth_index(depth):
 
@@ -109,7 +103,6 @@ def find_depth_index(depth):
         index_n = depth_list.index(depth_n)
 
         return index_n,depth_n
-
 
 def data_extraction_csv(data_input,lls_indicators):
     
@@ -213,7 +206,7 @@ def data_extraction_csv(data_input,lls_indicators):
                     unit = unit.units
                     variable_long_name = nc.variables[variable].long_name
                     institution = nc.getncattr('institution')
- #                  description = nc.getncattr('description')
+                    #description = nc.getncattr('description')
                     time_var = nc.variables['time']
                     time_data = num2date(time_var[:], time_var.units, time_var.calendar, only_use_cftime_datetimes=False, only_use_python_datetimes=True)
                     startDate =time_data[0].strftime("%Y%m%d")
@@ -234,7 +227,7 @@ def data_extraction_csv(data_input,lls_indicators):
                 writer.writerow(['Unit:',unit])
                 writer.writerow(['Time aggregation:','daily'])
                 writer.writerow(['Depth:',f'{depth_n} m'])
-#                writer.writerow(['Description:', description])
+               #writer.writerow(['Description:', description])
                 writer.writerow(['Institution:',institution])
                 writer.writerow(['Time series extracted on:', today_date])
                 writer.writerow([''])
@@ -347,15 +340,6 @@ def data_extraction_variable(data_input,lls_indicators):
                     var=nc.variables[variable][:,:,MapYIdx,MapXIdx]
                 print(f'data for Lat:{stationLat}, Lon:{stationLon} is extracted')
                 return var
-
-
-def test(data_input,lls_indicators):
-
-    var = data_extraction_variable(data_input,lls_indicators)
-    print(var)
-
-
-
 
 if __name__ == "__main__":
 
