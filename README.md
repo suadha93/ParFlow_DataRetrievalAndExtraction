@@ -57,7 +57,7 @@ ParFlowData : the path to the dataset in the THREDDS server\
 2. The indicator file "DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc". the file is available under ../data
    This dataset is used to extract the latidudes and longitudes, and also it is important to ensure that the selected location does not fall directly in a water body.\
    
-###The figures below demonstrates an example on how to access the path for the climatology of plant available water dataset\
+### The figures below demonstrates an example on how to access the path for the climatology of plant available water dataset\
 
 ![Thredds_server_1](https://github.com/suadha93/ParFlow_data_extraction_tool/assets/139210041/25ebd9c1-7df8-4461-946c-2e93d4aa4dcf)
 
