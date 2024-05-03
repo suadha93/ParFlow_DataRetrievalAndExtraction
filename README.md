@@ -53,7 +53,7 @@ sys.path.append(tool_path)
    stationID: name for your station/location\
    stationLat, stationLon: latitude and longitude of the station/location\
    ParFlowData : the path to the dataset in the THREDDS server\
-   Depth: the needed depth\
+   Depth: the needed depth \
 
 2. The indicator file "DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc". the file is available under ../data
    This dataset is used to extract the latidudes and longitudes, and also it is important to ensure that the selected location does not fall directly in a water body.\
