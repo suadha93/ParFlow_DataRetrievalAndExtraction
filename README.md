@@ -35,7 +35,7 @@ sys.path.append(tool_path)
 ### Notes:
 For running the tool other libraries should be installed as well:
 
-1-numpy &nbsp;
+1-numpy \n
 2-netCDF4 &nbsp;
 3-datetime 
 4-csv 
