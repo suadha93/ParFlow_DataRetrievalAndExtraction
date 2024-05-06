@@ -32,6 +32,15 @@ cwd = os.getcwd()
 tool_path = f"{cwd}/ParFlowCLM_DE06_data_extraction_tool"
 sys.path.append(tool_path)
 ```
+### Notes:
+For running the tool other libraries should be installed as well:
+
+1-numpy
+1-netCDF4
+1-datetime
+1-csv
+1-json
+
 ## Running the script
  To run the script you will need two files:
  1. Input file : this is a JSON file which includes information on the dataset you want to extract from. For an example please check ../examples.
