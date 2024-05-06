@@ -16,7 +16,7 @@ cd ParFlow_data_extraction_tool
 git submodule init 
 git submodule update
 ```
-
+ 
 To use the tool within other projects, you have to extend your local PYTHONPATH, to tell python where to find it. You can do this by:
 ``` bash
 cd ParFlow_data_extraction_tool
