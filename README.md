@@ -36,17 +36,10 @@ sys.path.append(tool_path)
 For running the tool other packages should be installed as well:
 
 - numpy
-
 - netCDF4
-&nbsp;
-
-3- datetime 
-&nbsp;
-
-4- csv 
-&nbsp;
-
-5- json 
+- datetime 
+- csv 
+- json 
 
 For more information on how to install packages follow the steps available here: https://packaging.python.org/en/latest/tutorials/installing-packages/
 
