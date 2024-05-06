@@ -71,8 +71,8 @@ For more information on how to install packages follow the steps available here:
 
 The climatology are stored under climatology_v2.
 &nbsp;
+![Thredds_server_1](https://github.com/suadha93/ParFlow_data_extraction_tool/assets/139210041/15d154df-edfd-43be-ab06-b134b65e5bda)
 
-![Thredds_server_1](https://github.com/suadha93/ParFlow_data_extraction_tool/assets/139210041/6b46b74b-4636-433b-ab72-0ba56e7a5518)
 
 After clicking on the dataset, it will take you to a similar page as below. 
 &nbsp;
