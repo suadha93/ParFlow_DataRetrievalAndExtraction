@@ -35,11 +35,11 @@ sys.path.append(tool_path)
 ### Notes:
 For running the tool other libraries should be installed as well:
 
-1-numpy
-1-netCDF4
-1-datetime
-1-csv
-1-json
+1-numpy 
+2-netCDF4 
+3-datetime 
+4-csv 
+5-json 
 
 ## Running the script
  To run the script you will need two files:
