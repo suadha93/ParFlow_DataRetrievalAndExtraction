@@ -9,9 +9,9 @@ In this example time series for climatology for the variable "plant available wa
 The data used for this example can be found under: https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v2/paw_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v02bJurecaGpuProdClimatologyTl_1hr2daily_20230101-20231231.nc
 
 
-## Example 2: return_a_specific_variable 
+## Example 2: variable_extraction
 
-In this example a ten day forecast for the variable "subsurface water storage" will be extracted for the 15 available layers for a location in Belgium " and is used to calculate the total subsurface storage and plot it. 
+In this example the daily subsurface storage will be extracted for the 15 available layers for a location in Lille, Belgium, and then the monthly total subsurface storage is calculated and plotted.
 
 The data used for this example can be found under: https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v2/sss_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v02bJurecaGpuProdClimatologyTl_1hr2daily_20220101-20221231.nc
 
