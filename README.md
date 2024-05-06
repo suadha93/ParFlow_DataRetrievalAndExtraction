@@ -1,8 +1,6 @@
 # Getting started
 
-This repository includes scripts and examples to extract time-series or variables for a specific location from ParFlowCLM DE06 simulations (https://adapter-projekt.org/). Selected variables are available on THREDDS-server (https://service.tereno.net/thredds/catalog/forecastnrw/products/catalog.html). 
-
-This tool is designed to be able to exract information from ParFlowCLM DE06 for a location.
+This repository includes scripts and examples to extract time-series or variables for a specific location from ParFlow simulations, in particular ParFlowCLM DE06 (https://adapter-projekt.org/). Selected variables are available on THREDDS-server (https://service.tereno.net/thredds/catalog/forecastnrw/products/catalog.html). 
 
 ## Prepare the repository for the extraction tool
 
@@ -37,7 +35,7 @@ sys.path.append(tool_path)
 ## Running the script
  To run the script you will need two files:
  1. Input file : this is a JSON file which includes information on the dataset you want to extract from. For an example please check ../examples.
-    the file should include the data below:
+    the file should include the following infromation:
     ``` bash
       [
         { 
@@ -52,13 +50,13 @@ sys.path.append(tool_path)
 
    stationID: name for your station/location\
    stationLat, stationLon: latitude and longitude of the station/location\
-   ParFlowData : the path to the dataset in the THREDDS server\
+   ParFlowData : the path to the dataset in the THREDDS server, or where the dataset is saved\
    Depth: the needed depth 
 
 2. The indicator file "DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc". the file is available under ../data
    This dataset is used to extract the latidudes and longitudes, and also it is important to ensure that the selected location does not fall directly in a water body.
    
-### The figures below demonstrates an example on how to access the path for the climatology of plant available water dataset for the year 2023.
+### The figures below demonstrates an example on how to access the path of the datasets, in this case, the climatology of plant available water dataset for the year 2023.
 
 The climatology are stored under climatology_v2.
 &nbsp;
