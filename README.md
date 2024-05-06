@@ -35,10 +35,9 @@ sys.path.append(tool_path)
 ### Notes:
 For running the tool other packages should be installed as well:
 
-1- numpy
-&nbsp; 
+- numpy
 
-2- netCDF4
+- netCDF4
 &nbsp;
 
 3- datetime 
