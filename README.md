@@ -37,12 +37,16 @@ For running the tool other libraries should be installed as well:
 
 1-numpy
 &nbsp;
+
 2-netCDF4
 &nbsp;
+
 3-datetime 
 &nbsp;
+
 4-csv 
 &nbsp;
+
 5-json 
 
 ## Running the script
