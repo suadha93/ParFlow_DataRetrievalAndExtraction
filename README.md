@@ -33,21 +33,23 @@ tool_path = f"{cwd}/ParFlowCLM_DE06_data_extraction_tool"
 sys.path.append(tool_path)
 ```
 ### Notes:
-For running the tool other libraries should be installed as well:
+For running the tool other packages should be installed as well:
 
-1-numpy
+1- numpy
 &nbsp; 
 
-2-netCDF4
+2- netCDF4
 &nbsp;
 
-3-datetime 
+3- datetime 
 &nbsp;
 
-4-csv 
+4- csv 
 &nbsp;
 
-5-json 
+5- json 
+
+For more information on how to install packages follow the steps available here: https://packaging.python.org/en/latest/tutorials/installing-packages/
 
 ## Running the script
  To run the script you will need two files:
