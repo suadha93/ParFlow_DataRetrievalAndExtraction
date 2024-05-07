@@ -233,7 +233,6 @@ def data_extraction_csv(data_input,lls_indicators):
                 writer.writerow([''])
                 
                 for dd in range(len(time_data)):
-                    print(time_data[dd])
                     dayDate = time_data[dd].replace(hour=12, minute=0, second=0)
                     var1Drow = [f'{dayDate}']
 
