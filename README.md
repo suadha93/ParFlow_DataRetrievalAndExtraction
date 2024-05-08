@@ -1,4 +1,4 @@
-# Getting started
+# Data extraction tool for the hydrological model ParFlow
 
 This repository includes scripts and examples to extract time-series or variables for a specific location from ParFlow simulations, in particular ParFlowCLM DE06 (https://adapter-projekt.org/). Selected variables are available on THREDDS-server (https://service.tereno.net/thredds/catalog/forecastnrw/products/catalog.html). 
 
