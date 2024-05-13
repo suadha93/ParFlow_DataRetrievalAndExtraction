@@ -1,3 +1,10 @@
+__author__ = "Suad Hammoudeh"        
+__copyright__ = "Copyright 2024, http://www.fz-juelich.de"        
+__credits__ = [""]                                                              
+__license__ = "MIT"                                                             
+__version__ = "2024-05-08"                                                        
+__maintainer__ = "Suad Hammoudeh"                                                
+__email__ = "s.hammoudeh@fz-juelich.de"
 
 """ This module contains three functions designed to extract variables
 from the ParFlow simulations. The first function 
