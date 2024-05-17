@@ -3,9 +3,9 @@
     "stationID": "Jülich",
     "stationLat": 50.93686, 
     "stationLon": 6.36174,
-    "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v2/paw_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v02bJurecaGpuProdClimatologyTl_1hr2daily_20230101-20231231.nc",
+    "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v2/wtd_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v02bJurecaGpuProdClimatologyTl_1hr2daily_20230101-20231231.nc",
     "DepthDescription": "If the variable in request is 2D, please enter -1 in the Depth",
-    "Depth": 13
+    "Depth": -1
   },
 
   {
