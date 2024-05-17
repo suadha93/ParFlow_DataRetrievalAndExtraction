@@ -54,7 +54,7 @@ For more information on how to install packages follow the steps available here:
           "stationLat":  ,
           "stationLon": ,
           "ParFlowData": " ",
-          "DepthDescription": "If the variable is 2D, please enter -1 in the Depth",
+          "DepthDescription": "If the variable is 2D, please enter -1 instead of the depth below",
           "Depth": 
         }
       ]  
