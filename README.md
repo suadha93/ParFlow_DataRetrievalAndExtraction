@@ -54,6 +54,7 @@ For more information on how to install packages follow the steps available here:
           "stationLat":  ,
           "stationLon": ,
           "ParFlowData": " ",
+          "DepthDescription": "If the variable is 2D, please enter -1 in the Depth",
           "Depth": 
         }
       ]  
@@ -63,6 +64,8 @@ For more information on how to install packages follow the steps available here:
    stationLat, stationLon: latitude and longitude of the station/location\
    ParFlowData : the path to the dataset in the THREDDS server, or where the dataset is saved\
    Depth: the needed depth 
+
+### Note: Some variables consist of a 2D array, such as "water table depth." In these cases, the information regarding the depth is not needed, -1 to be inserted instead.
 
 2. The indicator file "DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc". the file is available under ../data
    This dataset is used to extract the latidudes and longitudes, and also it is important to ensure that the selected location does not fall directly in a water body.
