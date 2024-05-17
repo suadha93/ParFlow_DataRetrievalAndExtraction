@@ -91,8 +91,7 @@ def find_depth_index(depth):
    #if the depth is the lower boundary of the layer
     try:
         index = depth_list.index(depth)
-        print(index)
-        return index
+        return index,depth
 
     #if the depth is within a layer, find the layer boundaries which
     #the depth falls in between
@@ -175,6 +174,7 @@ def data_extraction_csv(data_input,lls_indicators):
               lons_to_add = []
               lats_to_add = []
             # test if the other nearest neighbours are on a river, lake, sea
+             
               for i in range(len(closest_indices_9)):
                   with Dataset(lls_indicators, 'r') as ncIndicator:
                        indicator_value = ncIndicator.variables['Indicator'][0,14,sorted_indices_2d[0][i],sorted_indices_2d[1][i]]
@@ -202,53 +202,96 @@ def data_extraction_csv(data_input,lls_indicators):
             # if the condition passed, the next line will find the lower boundary of the layer 
             # that the depth in question falls inside
             else:
-
-                depth_index,depth_n = find_depth_index(depth)
-            # extract the data of the variable from the netcdf file
-                with Dataset(fncdata, 'r') as nc:
-                    variables = nc.variables.keys()
-                    variable = list(variables)[-1]
-                    var=nc.variables[variable][:,depth_index,MapYIdx,MapXIdx]
-                    unit = nc.variables[variable]
-                    unit = unit.units
-                    variable_long_name = nc.variables[variable].long_name
-                    institution = nc.getncattr('institution')
-                    #description = nc.getncattr('description')
-                    time_var = nc.variables['time']
-                    time_data = num2date(time_var[:], time_var.units, time_var.calendar, only_use_cftime_datetimes=False, only_use_python_datetimes=True)
-                    startDate =time_data[0].strftime("%Y%m%d")
-                    endDate = time_data[-1].strftime("%Y%m%d")
-
-                print(f'data for Lat:{stationLat}, Lon:{stationLon} is extracted and being written in a CSV file')
-
-                #open an CSV and save the time series
-                nameCSV = f'Station_{stationID}_ADAPTER_DE05_ECMWF-HRES-forecast_FZJ-IBG3-ParFlowCLM380_v04aJuwelsGpuProd_{variable}_{depth_n}m-depth_{startDate}-{endDate}.csv'
-                today_date = datetime.datetime.today().strftime('%Y-%m-%d')
-                 
-                fCSV = open(nameCSV, 'w', newline='')
-                writer = csv.writer(fCSV)
-                writer.writerow(['stationID:',f'{stationID}'])
-                writer.writerow(['stationLat:',f'{stationLat}'])
-                writer.writerow(['stationLon:',f'{stationLon}'])
-                writer.writerow(['Parameter:',variable_long_name])
-                writer.writerow(['Unit:',unit])
-                writer.writerow(['Time aggregation:','daily'])
-                writer.writerow(['Depth:',f'{depth_n} m'])
-               #writer.writerow(['Description:', description])
-                writer.writerow(['Institution:',institution])
-                writer.writerow(['Time series extracted on:', today_date])
-                writer.writerow([''])
                 
-                for dd in range(len(time_data)):
-                    dayDate = time_data[dd].replace(hour=12, minute=0, second=0)
-                    var1Drow = [f'{dayDate}']
+                if depth == -1: #if the input variable is 2D (no depth information)
+                    with Dataset(fncdata, 'r') as nc:
+                        variables = nc.variables.keys()
+                        variable = list(variables)[-1]
+                        var=nc.variables[variable][:,MapYIdx,MapXIdx]
+                        unit = nc.variables[variable]
+                        unit = unit.units
+                        variable_long_name = nc.variables[variable].long_name
+                        institution = nc.getncattr('institution')
+                        time_var = nc.variables['time']
+                        time_data = num2date(time_var[:], time_var.units, time_var.calendar, only_use_cftime_datetimes=False, only_use_python_datetimes=True)
+                        startDate =time_data[0].strftime("%Y%m%d")
+                        endDate = time_data[-1].strftime("%Y%m%d")
 
-                    var1Drow.append(var[dd])
+                    print(f'data for Lat:{stationLat}, Lon:{stationLon} is extracted and being written in a CSV file')
 
-                    writer.writerow(var1Drow)
+                    #open an CSV and save the time series
+                    nameCSV = f'Station_{stationID}_ADAPTER_DE05_ECMWF-HRES-forecast_FZJ-IBG3-ParFlowCLM380_v04aJuwelsGpuProd_{variable}_{startDate}-{endDate}.csv'
+                    today_date = datetime.datetime.today().strftime('%Y-%m-%d')
+
+                    fCSV = open(nameCSV, 'w', newline='')
+                    writer = csv.writer(fCSV)
+                    writer.writerow(['stationID:',f'{stationID}'])
+                    writer.writerow(['stationLat:',f'{stationLat}'])
+                    writer.writerow(['stationLon:',f'{stationLon}'])
+                    writer.writerow(['Parameter:',variable_long_name])
+                    writer.writerow(['Unit:',unit])
+                    writer.writerow(['Time aggregation:','daily'])
+                    writer.writerow(['Institution:',institution])
+                    writer.writerow(['Time series extracted on:', today_date])
+                    writer.writerow([''])
+
+                    for dd in range(len(time_data)):
+                        dayDate = time_data[dd].replace(hour=12, minute=0, second=0)
+                        var1Drow = [f'{dayDate}']
+
+                        var1Drow.append(var[dd])
+
+                        writer.writerow(var1Drow)
 
 
-                fCSV.close()
+                    fCSV.close()
+                
+                else: #if the input variable is 3D (depth infromation is available)
+
+                    depth_index,depth_n = find_depth_index(depth)
+                # extract the data of the variable from the netcdf file
+                    with Dataset(fncdata, 'r') as nc:
+                        variables = nc.variables.keys()
+                        variable = list(variables)[-1]
+                        var=nc.variables[variable][:,depth_index,MapYIdx,MapXIdx]
+                        unit = nc.variables[variable]
+                        unit = unit.units
+                        variable_long_name = nc.variables[variable].long_name
+                        institution = nc.getncattr('institution')
+                        time_var = nc.variables['time']
+                        time_data = num2date(time_var[:], time_var.units, time_var.calendar, only_use_cftime_datetimes=False, only_use_python_datetimes=True)
+                        startDate =time_data[0].strftime("%Y%m%d")
+                        endDate = time_data[-1].strftime("%Y%m%d")
+
+                    print(f'data for Lat:{stationLat}, Lon:{stationLon} is extracted and being written in a CSV file')
+
+                    #open an CSV and save the time series
+                    nameCSV = f'Station_{stationID}_ADAPTER_DE05_ECMWF-HRES-forecast_FZJ-IBG3-ParFlowCLM380_v04aJuwelsGpuProd_{variable}_{depth_n}m-depth_{startDate}-{endDate}.csv'
+                    today_date = datetime.datetime.today().strftime('%Y-%m-%d')
+                     
+                    fCSV = open(nameCSV, 'w', newline='')
+                    writer = csv.writer(fCSV)
+                    writer.writerow(['stationID:',f'{stationID}'])
+                    writer.writerow(['stationLat:',f'{stationLat}'])
+                    writer.writerow(['stationLon:',f'{stationLon}'])
+                    writer.writerow(['Parameter:',variable_long_name])
+                    writer.writerow(['Unit:',unit])
+                    writer.writerow(['Time aggregation:','daily'])
+                    writer.writerow(['Depth:',f'{depth_n} m'])
+                    writer.writerow(['Institution:',institution])
+                    writer.writerow(['Time series extracted on:', today_date])
+                    writer.writerow([''])
+                    
+                    for dd in range(len(time_data)):
+                        dayDate = time_data[dd].replace(hour=12, minute=0, second=0)
+                        var1Drow = [f'{dayDate}']
+
+                        var1Drow.append(var[dd])
+
+                        writer.writerow(var1Drow)
+
+
+                    fCSV.close()
 
                 print('============')
                 print('csv file saved')
@@ -279,10 +322,12 @@ def data_extraction_variable(data_input,lls_indicators):
             stationLat = location["stationLat"]
             stationLon = location["stationLon"]
             fncdata = location["ParFlowData"]
+            depth = location['Depth']
+
 
     #finding the index of the Lon and Lat in interest
 
-            with Dataset(fncdata, 'r') as nc:
+            with Dataset(lls_indicators, 'r') as nc:
 
                 SimLons=nc.variables['lon'][:]
                 SimLats=nc.variables['lat'][:]
@@ -338,12 +383,18 @@ def data_extraction_variable(data_input,lls_indicators):
                     break
             # if the condition passed, the next line will find the lowest boundary 
             # of the depth in question
-
+                        
             else:
+     
                 with Dataset(fncdata, 'r') as nc:
                     variables = nc.variables.keys()
                     variable = list(variables)[-1]
-                    var=nc.variables[variable][:,:,MapYIdx,MapXIdx]
-                print(f'data for Lat:{stationLat}, Lon:{stationLon} is extracted')
-                return var
+                    var_shape = nc.variables[variable]
+                    if var_shape.ndim == 3:
+                       print(var_shape.ndim)
+                       var=nc.variables[variable][:,MapYIdx,MapXIdx]
+                    else:
+                        var=nc.variables[variable][:,:,MapYIdx,MapXIdx]
+                    print(f'data for Lat:{stationLat}, Lon:{stationLon} is extracted')
+                    return var
 
