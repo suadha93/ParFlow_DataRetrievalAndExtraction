@@ -391,7 +391,6 @@ def data_extraction_variable(data_input,lls_indicators):
                     variable = list(variables)[-1]
                     var_shape = nc.variables[variable]
                     if var_shape.ndim == 3:
-                       print(var_shape.ndim)
                        var=nc.variables[variable][:,MapYIdx,MapXIdx]
                     else:
                         var=nc.variables[variable][:,:,MapYIdx,MapXIdx]
