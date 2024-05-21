@@ -9,12 +9,10 @@ Clone the repository as usual
 ``` bash
 git clone https://github.com/suadha93/ParFlow_data_extraction_tool.git
 ```
-and initialize and update the submodules afterwards
+Navigate to the repository
 
 ``` bash
 cd ParFlow_data_extraction_tool
-git submodule init 
-git submodule update
 ```
  
 To use the tool within other projects, you have to extend your local PYTHONPATH, to tell python where to find it. You can do this by:
@@ -22,7 +20,7 @@ To use the tool within other projects, you have to extend your local PYTHONPATH,
 cd ParFlow_data_extraction_tool
 export PYTHONPATH=$PYTHONPATH:$(pwd)
 ```
-after the repository is cloned, some libraries need to be installed
+after the repository is cloned, some libraries need to be installed as well
 
 ``` bash
 import os
@@ -43,10 +41,11 @@ For running the tool other packages should be installed as well:
 
 For more information on how to install packages follow the steps available here: https://packaging.python.org/en/latest/tutorials/installing-packages/
 
-## Running the script
- To run the script you will need two files:
+
+To run the script you will need two files:
  1. Input file : this is a JSON file which includes information on the dataset you want to extract from. For an example please check ../examples.
     the file should include the following infromation:
+
     ``` bash
      {
         "DepthDescription": "If the variable in request is 2D, please enter -1 in the Depth",
@@ -62,13 +61,12 @@ For more information on how to install packages follow the steps available here:
         ]
       }                  
      ```
-
    stationID: name for your station/location\
    stationLat, stationLon: latitude and longitude of the station/location\
    ParFlowData : the path to the dataset in the THREDDS server, or where the dataset is saved\
    Depth: the needed depth 
 
-2. The indicator file "DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc". the file is available under ../data
+
    This dataset is used to extract the latidudes and longitudes, and also it is important to ensure that the selected location does not fall directly in a water body.
    
 ### The figures below demonstrates an example on how to access the path of the datasets, in this case, the climatology of plant available water dataset for the year 2023.
