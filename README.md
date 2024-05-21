@@ -45,21 +45,6 @@ For more information on how to install packages follow the steps available here:
 To run the script you will need two files:
  1. Input file : this is a JSON file which includes information on the dataset you want to extract from. For an example please check ../examples.
     the file should include the following infromation:
-<<<<<<< HEAD
-=======
-    ``` bash
-      [
-        { 
-          "stationID": " ",
-          "stationLat":  ,
-          "stationLon": ,
-          "ParFlowData": " ",
-          "DepthDescription": "If the variable is 2D, please enter -1 instead of the depth below",
-          "Depth": 
-        }
-      ]  
-     ```
->>>>>>> e1ad73b3f4a5ec3ffc4f8f8cd6b9e35375252adf
 
     ``` bash
      {
@@ -81,13 +66,7 @@ To run the script you will need two files:
    ParFlowData : the path to the dataset in the THREDDS server, or where the dataset is saved\
    Depth: the needed depth 
 
-<<<<<<< HEAD
-2. The indicator file "DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc".\
-=======
-### Note: Some variables consist of a 2D array, such as "water table depth." In these cases, the information regarding the depth is not needed, -1 to be inserted instead.
 
-2. The indicator file "DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc". the file is available under ../data
->>>>>>> e1ad73b3f4a5ec3ffc4f8f8cd6b9e35375252adf
    This dataset is used to extract the latidudes and longitudes, and also it is important to ensure that the selected location does not fall directly in a water body.
    
 ### The figures below demonstrates an example on how to access the path of the datasets, in this case, the climatology of plant available water dataset for the year 2023.
