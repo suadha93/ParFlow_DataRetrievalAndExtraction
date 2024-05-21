@@ -48,19 +48,19 @@ For more information on how to install packages follow the steps available here:
  1. Input file : this is a JSON file which includes information on the dataset you want to extract from. For an example please check ../examples.
     the file should include the following infromation:
     ``` bash
-{
-  "DepthDescription": "If the variable in request is 2D, please enter -1 in the Depth",
-  "IndicatorPath": "/p/project/pfgpude05/hammoudeh1/ParflowCLM_postpro_scripts/data_extraction/DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv_d.nc",
-  "locations": [
-    {
-      "stationID": " ",
-      "stationLat": " ",
-      "stationLon": " ",
-      "ParFlowData": " ",
-      "Depth": " "
-    }
-  ]
-}                  
+     {
+        "DepthDescription": "If the variable in request is 2D, please enter -1 in the Depth",
+        "IndicatorPath": "/p/project/pfgpude05/hammoudeh1/ParflowCLM_postpro_scripts/data_extraction/DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv_d.nc",
+        "locations": [
+             {
+            "stationID": " ",
+            "stationLat": " ",
+            "stationLon": " ",
+            "ParFlowData": " ",
+            "Depth": " "
+           }
+        ]
+      }                  
      ```
 
    stationID: name for your station/location\
