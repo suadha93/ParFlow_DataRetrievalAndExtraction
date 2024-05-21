@@ -3,7 +3,14 @@
     "stationID": "Lille",
     "stationLat": 51.21998,
     "stationLon": 4.83778,
+<<<<<<< HEAD
     "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v2/sss_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v02bJurecaGpuProdClimatologyTl_1day_20230101-20231231.nc"
+=======
+    "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v2/sss_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v02bJurecaGpuProdClimatologyTl_1hr2daily_20220101-20221231.nc",
+    "DepthDescription": "If the variable is 2D, please enter -1 instead of the depth below",
+    "Depth": -1
+
+>>>>>>> e1ad73b3f4a5ec3ffc4f8f8cd6b9e35375252adf
   }
   
   ]
