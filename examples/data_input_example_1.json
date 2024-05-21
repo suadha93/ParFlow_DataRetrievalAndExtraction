@@ -15,6 +15,7 @@
     "ParFlowData": "https://service.tereno.net/thredds/catalog/forecastnrw/products/climatology_v2/catalog.html?dataset=forecastNRW_scan/products/climatology_v2/paw_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v02bJurecaGpuProdClimatologyTl_1day_20230101-20231231.nc",
     "DepthDescription": "If the variable in request is 2D, please enter -1 in the Depth",
     "Depth": 13
+
   }
 ]
                                                                                                                                                                                                                          
