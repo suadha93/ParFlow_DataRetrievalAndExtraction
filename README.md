@@ -47,7 +47,8 @@ To run the script you will need two files:
     the file should include the following infromation:
 
     ``` bash
-     {
+
+	     {
         "DepthDescription": "If the variable in request is 2D, please enter -1 in the Depth",
         "IndicatorPath": "/p/project/pfgpude05/hammoudeh1/ParflowCLM_postpro_scripts/data_extraction/DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv_d.nc",
         "locations": [
@@ -59,15 +60,15 @@ To run the script you will need two files:
             "Depth": " "
            }
         ]
-      }                  
-     ```
+    ```
+
    stationID: name for your station/location\
    stationLat, stationLon: latitude and longitude of the station/location\
    ParFlowData : the path to the dataset in the THREDDS server, or where the dataset is saved\
    Depth: the needed depth 
 
-
-   This dataset is used to extract the latidudes and longitudes, and also it is important to ensure that the selected location does not fall directly in a water body.
+ 2. The indicator file "DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc".\
+    This dataset is used to extract the latidudes and longitudes, and also it is important to ensure that the selected location does not fall directly in a water body.
    
 ### The figures below demonstrates an example on how to access the path of the datasets, in this case, the climatology of plant available water dataset for the year 2023.
 

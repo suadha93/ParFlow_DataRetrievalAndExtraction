@@ -110,7 +110,7 @@ def find_depth_index(depth):
 
         return index_n,depth_n
 
-def data_extraction_csv(data_input,lls_indicators):
+def data_extraction_csv(data_input):
     
     """ extract a time-series for a desired time 
     period for a specific location 
@@ -128,19 +128,22 @@ def data_extraction_csv(data_input,lls_indicators):
     """
 
     #extracts infromation from the JSON file were the input information is provided
-
     with open(data_input, 'r') as f:
-        locations = json.load(f)
+        data = json.load(f)
+        locations = data['locations']
+        indicator = data['IndicatorPath']
+        depth_description = data['DepthDescription']
         for location in locations:
             stationID = location["stationID"]
             stationLat = location["stationLat"]
             stationLon = location["stationLon"]
             fncdata = location["ParFlowData"]
-            depth = location['Depth']
+            depth = location["Depth"]
             print(f'Location: {stationID}')
+
             
             #finding the index of the Lon and Lat in interest
-            with Dataset(lls_indicators, 'r') as nc:
+            with Dataset(indicator, 'r') as nc:
             
                 SimLons=nc.variables['lon'][:]
                 SimLats=nc.variables['lat'][:]
@@ -157,7 +160,7 @@ def data_extraction_csv(data_input,lls_indicators):
 
             #extract the infromation for the soil layers and determine whether 
             #the point in interest is located directly in a water body such as rivers, lakes or seas
-            with Dataset(lls_indicators, 'r') as ncIndicator: 
+            with Dataset(indicator, 'r') as ncIndicator: 
                indicator_value = ncIndicator.variables['Indicator'][0,14,MapYIdx,MapXIdx]
                   
             # Check if the location falls dierectly on a river, lake or sea
@@ -176,7 +179,7 @@ def data_extraction_csv(data_input,lls_indicators):
             # test if the other nearest neighbours are on a river, lake, sea
              
               for i in range(len(closest_indices_9)):
-                  with Dataset(lls_indicators, 'r') as ncIndicator:
+                  with Dataset(indicator, 'r') as ncIndicator:
                        indicator_value = ncIndicator.variables['Indicator'][0,14,sorted_indices_2d[0][i],sorted_indices_2d[1][i]]
                        
                        if indicator_value not in [19,20,21]:
@@ -217,7 +220,7 @@ def data_extraction_csv(data_input,lls_indicators):
                         startDate =time_data[0].strftime("%Y%m%d")
                         endDate = time_data[-1].strftime("%Y%m%d")
 
-                    print(f'data for Lat:{stationLat}, Lon:{stationLon} is extracted and being written in a CSV file')
+                    print(f'data for Lat:{stationLat}, Lon:{stationLon} is extracted')
 
                     #open an CSV and save the time series
                     nameCSV = f'Station_{stationID}_ADAPTER_DE05_ECMWF-HRES-forecast_FZJ-IBG3-ParFlowCLM380_v04aJuwelsGpuProd_{variable}_{startDate}-{endDate}.csv'
@@ -263,7 +266,7 @@ def data_extraction_csv(data_input,lls_indicators):
                         startDate =time_data[0].strftime("%Y%m%d")
                         endDate = time_data[-1].strftime("%Y%m%d")
 
-                    print(f'data for Lat:{stationLat}, Lon:{stationLon} is extracted and being written in a CSV file')
+                    #print(f'data for Lat:{stationLat}, Lon:{stationLon} is extracted and being written in a CSV file')
 
                     #open an CSV and save the time series
                     nameCSV = f'Station_{stationID}_ADAPTER_DE05_ECMWF-HRES-forecast_FZJ-IBG3-ParFlowCLM380_v04aJuwelsGpuProd_{variable}_{depth_n}m-depth_{startDate}-{endDate}.csv'
@@ -297,7 +300,7 @@ def data_extraction_csv(data_input,lls_indicators):
                 print('csv file saved')
                 print(' ')
 
-def data_extraction_variable(data_input,lls_indicators):
+def data_extraction_variable(data_input):
 
     """ returns a variable of a desired time period for a specific location
     for the 15 available layers.
@@ -305,7 +308,6 @@ def data_extraction_variable(data_input,lls_indicators):
         Parameters
         ----------
         data_input: JSON file
-        llsmask: NETCDF file
 
         Returns
         -------
@@ -316,18 +318,22 @@ def data_extraction_variable(data_input,lls_indicators):
     #extracts infromation from the JSON file were the input information is provided
 
     with open(data_input, 'r') as f:
-        locations = json.load(f)
+        data = json.load(f)
+        locations = data['locations']
+        indicator = data['IndicatorPath']
+        depth_description = data['DepthDescription']
         for location in locations:
             stationID = location["stationID"]
             stationLat = location["stationLat"]
             stationLon = location["stationLon"]
             fncdata = location["ParFlowData"]
-            depth = location['Depth']
+            depth = location["Depth"]
+            print(f'Location: {stationID}')
 
 
     #finding the index of the Lon and Lat in interest
 
-            with Dataset(lls_indicators, 'r') as nc:
+            with Dataset(indicator, 'r') as nc:
 
                 SimLons=nc.variables['lon'][:]
                 SimLats=nc.variables['lat'][:]
@@ -338,12 +344,12 @@ def data_extraction_variable(data_input,lls_indicators):
             MapXIdx = mapped_idx[1]
 
             print(f'Found:')
-            print(f'Mapped x index: {MapXIdx}')
-            print(f'Mapped y index: {MapYIdx}')
+            print(f'x index: {MapXIdx}')
+            print(f'y index: {MapYIdx}')
 
             #extract the infromation for the soil layers and determine whether 
             #the point in interest is located directly in a water body such as rivers, lakes or seas
-            with Dataset(lls_indicators, 'r') as ncIndicator: 
+            with Dataset(indicator, 'r') as ncIndicator: 
                indicator_value = ncIndicator.variables['Indicator'][0,14,MapYIdx,MapXIdx]
                   
             # Check if the location falls dierectly on a river, lake or sea
@@ -361,7 +367,7 @@ def data_extraction_variable(data_input,lls_indicators):
               lats_to_add = []
             # test if the other nearest neighbours are on a river, lake, sea
               for i in range(len(closest_indices_9)):
-                  with Dataset(lls_indicators, 'r') as ncIndicator:
+                  with Dataset(indicator, 'r') as ncIndicator:
                        indicator_value = ncIndicator.variables['Indicator'][0,14,sorted_indices_2d[0][i],sorted_indices_2d[1][i]]
                        
                        if indicator_value not in [19,20,21]:
@@ -394,6 +400,5 @@ def data_extraction_variable(data_input,lls_indicators):
                        var=nc.variables[variable][:,MapYIdx,MapXIdx]
                     else:
                         var=nc.variables[variable][:,:,MapYIdx,MapXIdx]
-                    print(f'data for Lat:{stationLat}, Lon:{stationLon} is extracted')
                     return var
 
