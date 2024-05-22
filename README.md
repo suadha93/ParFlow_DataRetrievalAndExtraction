@@ -82,7 +82,7 @@ To run the script you will need input file, a JSON file which includes informati
             "Depth": " "
            }
         ]
-    ```
+    
 
    stationID: name for your station/location\
    stationLat, stationLon: latitude and longitude of the station/location\
