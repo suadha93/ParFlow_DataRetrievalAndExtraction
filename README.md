@@ -1,8 +1,35 @@
 # Data extraction tool for the hydrological model ParFlow
 
-This repository includes scripts and examples to extract time-series or variables for a specific location from ParFlow simulations, in particular ParFlowCLM DE06 (https://adapter-projekt.org/). Selected variables are available on THREDDS-server (https://service.tereno.net/thredds/catalog/forecastnrw/products/catalog.html). 
+# Purpose
 
-## Prepare the repository for the extraction tool
+This repository provides scripts and examples for extracting time-series data and variables from an open-access research dataset. The dataset contains experimental simulation results and derived diagnostics from ParFlow hydrological model runs, specifically ParFlowCLM DE06. You can find more information about the project [here](https://adapter-projekt.org/).
+
+# Dataset Information
+
+The dataset includes a selection of variables and diagnostics accessible via a THREDDS server:
+- [THREDDS Catalog](https://service.tereno.net/thredds/catalog/forecastnrw/products/catalog.html)
+- [Detailed Dataset Information](https://datapub.fz-juelich.de/slts/FZJ_ParFlow_DE06_hydrologic_forecasts/index.html)
+
+# Prerequisites
+
+Ensure you have Python installed, then install the necessary packages:
+
+- `numpy`
+- `netCDF4`
+- `datetime`
+- `csv`
+- `json`
+
+
+For more information on how to install packages follow the steps available [here](https://packaging.python.org/en/latest/tutorials/installing-packages/)                                         
+
+       
+                                           
+
+
+Below are step-by-step instructions on how to install the tool and usage examples.
+
+## Installation
 
 Clone the repository as usual
 
