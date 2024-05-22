@@ -132,7 +132,6 @@ def data_extraction_csv(data_input):
         data = json.load(f)
         locations = data['locations']
         indicator = data['IndicatorPath']
-        depth_description = data['DepthDescription']
         for location in locations:
             stationID = location["stationID"]
             stationLat = location["stationLat"]
@@ -205,15 +204,28 @@ def data_extraction_csv(data_input):
             # if the condition passed, the next line will find the lower boundary of the layer 
             # that the depth in question falls inside
             else:
-                
-                if depth == -1: #if the input variable is 2D (no depth information)
-                    with Dataset(fncdata, 'r') as nc:
-                        variables = nc.variables.keys()
-                        variable = list(variables)[-1]
+               
+                depth_index,depth_n = find_depth_index(depth)
+                with Dataset(fncdata, 'r') as nc:
+                    variables = nc.variables.keys()
+                    variable = list(variables)[-1]
+                    var_shape = nc.variables[variable]
+                    variable_long_name = nc.variables[variable].long_name
+                    if var_shape.ndim == 3:
+                        print(f'{variable_long_name} is a 2D variable, no depth information needed')
                         var=nc.variables[variable][:,MapYIdx,MapXIdx]
                         unit = nc.variables[variable]
                         unit = unit.units
-                        variable_long_name = nc.variables[variable].long_name
+                        institution = nc.getncattr('institution')
+                        time_var = nc.variables['time']
+                        time_data = num2date(time_var[:], time_var.units, time_var.calendar, only_use_cftime_datetimes=False, only_use_python_datetimes=True)
+                        startDate =time_data[0].strftime("%Y%m%d")
+                        endDate = time_data[-1].strftime("%Y%m%d")
+
+                    else:
+                        var=nc.variables[variable][:,depth_index,MapYIdx,MapXIdx]
+                        unit = nc.variables[variable]
+                        unit = unit.units
                         institution = nc.getncattr('institution')
                         time_var = nc.variables['time']
                         time_data = num2date(time_var[:], time_var.units, time_var.calendar, only_use_cftime_datetimes=False, only_use_python_datetimes=True)
@@ -246,54 +258,6 @@ def data_extraction_csv(data_input):
 
                         writer.writerow(var1Drow)
 
-
-                    fCSV.close()
-                
-                else: #if the input variable is 3D (depth infromation is available)
-
-                    depth_index,depth_n = find_depth_index(depth)
-                # extract the data of the variable from the netcdf file
-                    with Dataset(fncdata, 'r') as nc:
-                        variables = nc.variables.keys()
-                        variable = list(variables)[-1]
-                        var=nc.variables[variable][:,depth_index,MapYIdx,MapXIdx]
-                        unit = nc.variables[variable]
-                        unit = unit.units
-                        variable_long_name = nc.variables[variable].long_name
-                        institution = nc.getncattr('institution')
-                        time_var = nc.variables['time']
-                        time_data = num2date(time_var[:], time_var.units, time_var.calendar, only_use_cftime_datetimes=False, only_use_python_datetimes=True)
-                        startDate =time_data[0].strftime("%Y%m%d")
-                        endDate = time_data[-1].strftime("%Y%m%d")
-
-                    #print(f'data for Lat:{stationLat}, Lon:{stationLon} is extracted and being written in a CSV file')
-
-                    #open an CSV and save the time series
-                    nameCSV = f'Station_{stationID}_ADAPTER_DE05_ECMWF-HRES-forecast_FZJ-IBG3-ParFlowCLM380_v04aJuwelsGpuProd_{variable}_{depth_n}m-depth_{startDate}-{endDate}.csv'
-                    today_date = datetime.datetime.today().strftime('%Y-%m-%d')
-                     
-                    fCSV = open(nameCSV, 'w', newline='')
-                    writer = csv.writer(fCSV)
-                    writer.writerow(['stationID:',f'{stationID}'])
-                    writer.writerow(['stationLat:',f'{stationLat}'])
-                    writer.writerow(['stationLon:',f'{stationLon}'])
-                    writer.writerow(['Parameter:',variable_long_name])
-                    writer.writerow(['Unit:',unit])
-                    writer.writerow(['Time aggregation:','daily'])
-                    writer.writerow(['Depth:',f'{depth_n} m'])
-                    writer.writerow(['Institution:',institution])
-                    writer.writerow(['Time series extracted on:', today_date])
-                    writer.writerow([''])
-                    
-                    for dd in range(len(time_data)):
-                        dayDate = time_data[dd].replace(hour=12, minute=0, second=0)
-                        var1Drow = [f'{dayDate}']
-
-                        var1Drow.append(var[dd])
-
-                        writer.writerow(var1Drow)
-
-
                     fCSV.close()
 
                 print('============')
@@ -321,7 +285,7 @@ def data_extraction_variable(data_input):
         data = json.load(f)
         locations = data['locations']
         indicator = data['IndicatorPath']
-        depth_description = data['DepthDescription']
+        var_array = np.empty((0,365))
         for location in locations:
             stationID = location["stationID"]
             stationLat = location["stationLat"]
@@ -391,14 +355,21 @@ def data_extraction_variable(data_input):
             # of the depth in question
                         
             else:
-     
+                depth_index,depth_n = find_depth_index(depth)
                 with Dataset(fncdata, 'r') as nc:
                     variables = nc.variables.keys()
                     variable = list(variables)[-1]
                     var_shape = nc.variables[variable]
+                    variable_long_name = nc.variables[variable].long_name
                     if var_shape.ndim == 3:
-                       var=nc.variables[variable][:,MapYIdx,MapXIdx]
-                    else:
-                        var=nc.variables[variable][:,:,MapYIdx,MapXIdx]
-                    return var
 
+                       print(f'{variable_long_name} is a 2D variable, no depth information needed')
+                       var=nc.variables[variable][:,MapYIdx,MapXIdx]
+                       var = np.array(var.reshape(1, 365))
+                       var_array = np.ma.append(var_array, var,axis=0)
+                    else:
+                        var=nc.variables[variable][:,depth_index,MapYIdx,MapXIdx]
+                        var = np.array(var.reshape(1, 365)) 
+                        var_array = np.ma.append(var_array, var,axis=0)
+    return(var_array)
+   

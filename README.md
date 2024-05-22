@@ -65,7 +65,7 @@ To run the script you will need two files:
    stationID: name for your station/location\
    stationLat, stationLon: latitude and longitude of the station/location\
    ParFlowData : the path to the dataset in the THREDDS server, or where the dataset is saved\
-   Depth: the needed depth 
+   Depth: the needed depth in meters 
 
  2. The indicator file "DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc".\
     This dataset is used to extract the latidudes and longitudes, and also it is important to ensure that the selected location does not fall directly in a water body.

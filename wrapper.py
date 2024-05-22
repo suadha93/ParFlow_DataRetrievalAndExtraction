@@ -1,9 +1,6 @@
 import os
 import sys
 
-cwd = os.getcwd()
-tool_path = f"{cwd}/ParFlow_data_extraction_tool"
-sys.path.append(tool_path)
 from data_extraction_tool import data_extraction_csv, data_extraction_variable
 
 def wrapper():
