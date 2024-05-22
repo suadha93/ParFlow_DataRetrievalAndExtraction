@@ -89,7 +89,7 @@ To run the script you will need input file, a JSON file which includes informati
    ParFlowData : the path to the dataset in the THREDDS server, or where the dataset is saved\
    Depth: the needed depth in meters 
 
-### Note:
+#### Note:
 
 - The simulations are calculated for 15 layers from the surface to 60m depth in mm water column each depth represents the lower boundary of the layer, their thickness varies with depth. The depths (in meters) are available as follows: 60.0, 42.0, 27.0, 17.0, 7.0, 3.0, 2.0, 1.3, 0.8, 0.5, 0.3,0.17, 0.1, 0.05, 0.02. If the depth inserted as input falls between two layer, the data extracted will be for the lower boundary of the layer. 
 
