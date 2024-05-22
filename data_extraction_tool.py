@@ -1,10 +1,3 @@
-__author__ = "Suad Hammoudeh"        
-__copyright__ = "Copyright 2024, http://www.fz-juelich.de"        
-__credits__ = [""]                                                              
-__license__ = "MIT"                                                             
-__version__ = "2024-05-08"                                                        
-__maintainer__ = "Suad Hammoudeh"                                                
-__email__ = "s.hammoudeh@fz-juelich.de"
 
 """ This module contains three functions designed to extract variables
 from the ParFlow simulations. The first function 
@@ -21,14 +14,20 @@ import datetime
 import csv
 import json
 
+
+__author__ = "Suad Hammoudeh"        
+__copyright__ = "Copyright 2024, http://www.fz-juelich.de"        
+__credits__ = [""]                                                              
+__license__ = "MIT"                                                             
+__version__ = "2024-05-08"                                                        
+__maintainer__ = "Suad Hammoudeh"                                                
+__email__ = "s.hammoudeh@fz-juelich.de"
+
 def spher_dist( lon1, lat1, lon2, lat2, Rearth=6371):
     """ calculate the spherical / haversine distance
 
     Source: https://www.kompf.de/gps/distcalc.html
     This function is supposed to proper handle different shaped coords
-    latX and lonX is supposed to be passed in rad. 
-    This function was originally written Niklas WAGNER 
-    for SLOTH (https://hpscterrsys.github.io/SLOTH/README.html)
 
     Parameters
     ----------
