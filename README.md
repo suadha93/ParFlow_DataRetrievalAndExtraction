@@ -107,16 +107,16 @@ Alternatively, you can directly use the tool in your script as follows:
 
 ### Extracting a time-series
 
-bash 
+ 
 ```
 from data_extraction_tool import data_extraction_csv
 data_input = 'path/to/your/data_input.json"
 data_extraction_csv(data_input)
 ```
 This will generate a CSV file for each station specified in the input file.
+
 ### Extracting a variable
 
-bash
 ```
 data = data_extraction_variable(data_input)
 ```
