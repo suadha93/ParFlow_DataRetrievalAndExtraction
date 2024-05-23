@@ -58,14 +58,14 @@ Navigate to the repository
 cd ParFlow_data_extraction_tool
 ```
  
-To use the tool within other projects, you have to extend your local PYTHONPATH, to tell python where to find it. You can do this by:
+To use the tool within other projects, you have to extend your local PYTHONPATH, to inform python where to find it. You can do this by:
 
 ``` bash
 cd ParFlow_data_extraction_tool
 export PYTHONPATH=$PYTHONPATH:$(pwd)
 ```
-To run the script, you will need an input file, specifically a JSON file that includes information about the dataset you want to extract from. Examples are provided in the Usage section. The file should include the following information:
-    the file should include the following infromation:
+To run the script, you will need an input file, specifically a JSON file that includes information about the dataset you want to extract from. Examples are provided in the "Usage" section. The file should include the following information:
+
 ```
 {
     "IndicatorPath": " ",
@@ -80,11 +80,11 @@ To run the script, you will need an input file, specifically a JSON file that in
     ]
 }
 ```
-   IndicatorPath: the path to the indicator netcdf file
-   stationID: name for your station/location\
-   stationLat, stationLon: latitude and longitude of the station/location\
-   ParFlowData : the path to the dataset in the THREDDS server, or where the dataset is saved\
-   Depth: the needed depth in meters 
+   IndicatorPath: the path to the indicator netcdf file, string
+   stationID: name for your station/location\, string
+   stationLat, stationLon: latitude and longitude of the station/location\, integer
+   ParFlowData : the path to the dataset in the THREDDS server, or where the dataset is saved\, string
+   Depth: the needed depth in meters, integer
 
 #### Note:
 
@@ -94,7 +94,7 @@ To run the script, you will need an input file, specifically a JSON file that in
 ## Usage
 
 ### Examples for the input file 
-To run the script, you will need an input file, specifically a JSON file that includes information about the dataset you want to extract from. Below are some examples of how the JSON file should be structured:
+As mentioned abpve to run the script, you will need an input file, specifically a JSON file. Below are some examples of how the JSON file should be structured:
 
 ### Example 1: single location extraction
 ```
