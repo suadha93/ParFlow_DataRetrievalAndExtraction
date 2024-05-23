@@ -165,7 +165,7 @@ As mentioned above to run the script, you will a JSON file. Below are some examp
     ]
 }
 ```
-#####Note: The URL of the indicator file must be updated according to the location of your repository.
+**Note: The URL of the indicator file must be updated according to the location of your repository.**
 
 There are two ways to run the tool: 
 
