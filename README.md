@@ -90,6 +90,7 @@ For running the tool you would need two inputs:
             "Depth": 
         }
     ]
+}
 ```
    IndicatorPath: the path to the indicator netcdf file, string\
    stationID: name for your station/location, string\
