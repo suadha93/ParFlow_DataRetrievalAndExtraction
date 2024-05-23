@@ -204,7 +204,6 @@ The results will return the variables as an array. If more than one location or 
  [ results from station_3],
  ...
 ]
-
 ```
 #### Important notes:
 
