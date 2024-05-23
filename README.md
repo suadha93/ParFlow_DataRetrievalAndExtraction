@@ -66,13 +66,12 @@ To use the tool within other projects, you have to extend your local PYTHONPATH,
 cd ParFlow_data_extraction_tool
 export PYTHONPATH=$PYTHONPATH:$(pwd)
 ```
-
-To run the script you will need input file, a JSON file which includes information on the dataset you want to extract from. Examples are provided in the Usage section.
+To run the script, you will need an input file, specifically a JSON file that includes information about the dataset you want to extract from. Examples are provided in the Usage section. The file should include the following information:
     the file should include the following infromation:
     bash
              		
 	     {
-        "IndicatorPath": "https://github.com/suadha93/ParFlow_data_extraction_tool/DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv_d.nc",
+        "IndicatorPath": " ",
         "locations": [
              {
             "stationID": " ",
@@ -83,7 +82,7 @@ To run the script you will need input file, a JSON file which includes informati
            }
         ]
 	    }
-    
+   IndicatorPath: the path to the indicator netcdf file
    stationID: name for your station/location\
    stationLat, stationLon: latitude and longitude of the station/location\
    ParFlowData : the path to the dataset in the THREDDS server, or where the dataset is saved\
@@ -91,10 +90,17 @@ To run the script you will need input file, a JSON file which includes informati
 
 #### Note:
 
-- The simulations are calculated for 15 layers from the surface to 60m depth in mm water column each depth represents the lower boundary of the layer, their thickness varies with depth. The depths (in meters) are available as follows: 60.0, 42.0, 27.0, 17.0, 7.0, 3.0, 2.0, 1.3, 0.8, 0.5, 0.3,0.17, 0.1, 0.05, 0.02. If the depth inserted as input falls between two layer, the data extracted will be for the lower boundary of the layer. 
+- The simulations are calculated for 15 layers from the surface to 60m depth in mm water column each depth represents the lower boundary of the layer, their thickness varies with depth. The depths (in meters) are available as follows: 60.0, 42.0, 27.0, 17.0, 7.0, 3.0, 2.0, 1.3, 0.8, 0.5, 0.3,0.17, 0.1, 0.05, 0.02. If the depth inserted as input falls between two layer, the data extracted will be for the lower boundary of the layer.
 
 
 ## Usage
+
+### Examples for the input file 
+To run the script, you will need an input file, specifically a JSON file that includes information about the dataset you want to extract from. Below are some examples of how the JSON file should be structured:
+
+### Example 1: single location extraction
+
+
 We have provided a convenient wrapper function that simplifies the extraction of time-series data and variables. To run the wrapper, use the following command format:
 bash
 ```
@@ -102,7 +108,24 @@ python wrapper.py data_input.json output_format
 ```
 - data_input.json: Path to the JSON file containing the input data.
 - output_format: Desired output format, either 'csv' or 'var'.
-- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Alternatively, you can directly use the tool in your script as follows:
 
 ### Extracting a time-series
