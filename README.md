@@ -2,7 +2,7 @@
 
 This repository provides scripts and examples for extracting time-series data and variables for a signle or multiple locations from an open-access research [dataset](https://doi.org/10.26165/JUELICH-DATA/GROHKP) that resides on a THREDDS server. The dataset contains experimental simulation results and derived diagnostics from [ParFlow](https://github.com/parflow/parflow) hydrological model runs at high resolution over Germany and the surrounding countries. You can find more information about the underlying project ADAPTER [here](https://adapter-projekt.org/).
 
-# Dataset information
+## Dataset information
 
 The dataset includes a selection of variables and diagnostics accessible via a THREDDS server:
 - [THREDDS catalog](https://service.tereno.net/thredds/catalog/forecastnrw/products/catalog.html)
@@ -12,7 +12,7 @@ The dataset comprises both 2D and 3D variables, with the third dimension account
 
 
 
-# Prerequisites to use the extraction tool
+## Prerequisites to use the extraction tool
 
 Ensure you have Python version 3.0 or newer installed, then install the necessary packages:
 
