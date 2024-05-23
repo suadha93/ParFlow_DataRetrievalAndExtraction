@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 
 import os
 import sys
@@ -11,7 +12,6 @@ __license__ = "MIT"
 __version__ = "2024-05-08"
 __maintainer__ = "Suad Hammoudeh"
 __email__ = "s.hammoudeh@fz-juelich.de"
-
 
 
 def wrapper():
