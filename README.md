@@ -176,7 +176,8 @@ There are two ways to run the tool:
 ```
 - data_input.json: Path to the JSON file containing the input data.
 - output_format: Desired output format, either 'csv' or 'var'.
-Make sure to make your wrapper.py executable by using the following command line:
+  
+Ensure that your wrapper.py script is made executable by executing the following command:
 
 ```
 chmod +x wrapper.py
