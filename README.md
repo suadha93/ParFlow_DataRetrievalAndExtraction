@@ -1,6 +1,6 @@
-# Purpose
+# Data extraction tool for hydroligcal model ParFLow
 
-This repository provides scripts and examples for extracting time-series data and variables from an open-access research dataset. The dataset contains experimental simulation results and derived diagnostics from ParFlow hydrological model runs, specifically ParFlowCLM DE06. You can find more information about the project [here](https://adapter-projekt.org/).
+This repository provides scripts and examples for extracting time-series data and variables for a signle or multiple locations from an open-access research [dataset](https://doi.org/10.26165/JUELICH-DATA/GROHKP) that resides on a THREDDS server. The dataset contains experimental simulation results and derived diagnostics from [ParFlow](https://github.com/parflow/parflow) hydrological model runs at high resolution over Germany and the surrounding countries. You can find more information about the underlying project ADAPTER [here](https://adapter-projekt.org/).
 
 # Dataset information
 
@@ -8,6 +8,36 @@ The dataset includes a selection of variables and diagnostics accessible via a T
 - [THREDDS catalog](https://service.tereno.net/thredds/catalog/forecastnrw/products/catalog.html)
 - [Detailed dataset information](https://datapub.fz-juelich.de/slts/FZJ_ParFlow_DE06_hydrologic_forecasts/index.html)
 
+The dataset comprises both 2D and 3D variables, with the third dimension accounting for depth.
+
+
+
+# Prerequisites to use the extraction tool
+
+Ensure you have Python version 3.0 or newer installed, then install the necessary packages:
+
+- `numpy`
+- `netCDF4`
+- `datetime`
+- `csv`
+- `json`
+
+
+For more information on how to install packages follow the steps available [here](https://packaging.python.org/en/latest/tutorials/installing-packages/).                                       
+
+       
+Below are step-by-step instructions on how to install the tool and usage examples.
+
+## Installation of the extraction tool 
+
+Clone the repository as usual
+
+``` bash
+git clone https://github.com/suadha93/ParFlow_data_extraction_tool.git
+```
+
+
+## Accessing the dataset from the THREDDS server
 
 The figures below demonstrates an example on how to access the path of the datasets, in this case, the climatology of plant available water dataset for the year 2023.
 
@@ -29,29 +59,8 @@ If you chose to access the dataset using OPENDAP, you have to copy the data url 
 ![Thredds_server_3](https://github.com/suadha93/ParFlow_data_extraction_tool/assets/139210041/6084e4cc-1e48-47da-87a6-0e2c7051c7a7)
 
 
-# Prerequisites
+## Usage 
 
-Ensure you have Python installed, then install the necessary packages:
-
-- `numpy`
-- `netCDF4`
-- `datetime`
-- `csv`
-- `json`
-
-
-For more information on how to install packages follow the steps available [here](https://packaging.python.org/en/latest/tutorials/installing-packages/)                                         
-
-       
-Below are step-by-step instructions on how to install the tool and usage examples.
-
-## Installation
-
-Clone the repository as usual
-
-``` bash
-git clone https://github.com/suadha93/ParFlow_data_extraction_tool.git
-```
 Navigate to the repository
 
 ``` bash
@@ -86,12 +95,12 @@ To run the script, you will need an input file, specifically a JSON file that in
    ParFlowData : the path to the dataset in the THREDDS server, or where the dataset is saved, string\
    Depth: the needed depth in meters, integer
 
+
+
 #### Note:
 
 - The simulations are calculated for 15 layers from the surface to 60m depth in mm water column each depth represents the lower boundary of the layer, their thickness varies with depth. The depths (in meters) are available as follows: 60.0, 42.0, 27.0, 17.0, 7.0, 3.0, 2.0, 1.3, 0.8, 0.5, 0.3,0.17, 0.1, 0.05, 0.02. If the depth inserted as input falls between two layer, the data extracted will be for the lower boundary of the layer.
 
-
-## Usage
 
 ### Examples for the input file 
 As mentioned abpve to run the script, you will need an input file, specifically a JSON file. Below are some examples of how the JSON file should be structured:
