@@ -102,4 +102,26 @@ python wrapper.py data_input.json output_format
 ```
 - data_input.json: Path to the JSON file containing the input data.
 - output_format: Desired output format, either 'csv' or 'var'.
+- 
+Alternatively, you can directly use the tool in your script as follows:
+
+### Extracting a time-series
+
+bash 
+```
+from data_extraction_tool import data_extraction_csv
+data_input = 'path/to/your/data_input.json"
+data_extraction_csv(data_input)
+```
+This will generate a CSV file for each station specified in the input file.
+### Extracting a variable
+
+bash
+```
+data = data_extraction_variable(data_input)
+```
+The results will return the variables as an array. If more than one station is specified, all results will be returned in one array. It is important to ensure that all stations are within the same time period. If they are not, calculate each variable separately.
+
+
+
 
