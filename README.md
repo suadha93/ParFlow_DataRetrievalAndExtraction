@@ -99,7 +99,7 @@ As mentioned abpve to run the script, you will need an input file, specifically 
 ### Example 1: single location extraction
 ```
 {
-    "IndicatorPath": "https://github.com/suadha93/ParFlow_data_extraction_tool/DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv_d.nc",
+    "IndicatorPath": "https://github.com/suadha93/ParFlow_data_extraction_tool/DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc",
     "locations": [
         {
             "stationID": "example_station_1",
@@ -114,7 +114,7 @@ As mentioned abpve to run the script, you will need an input file, specifically 
 ### Example 2: multiple locations extraction, same variable
 ```
 {
-    "IndicatorPath": "https://github.com/suadha93/ParFlow_data_extraction_tool/DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv_d.nc",
+    "IndicatorPath": "https://github.com/suadha93/ParFlow_data_extraction_tool/DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc",
     "locations": [
         {
             "stationID": "example_station_1",
@@ -136,7 +136,7 @@ As mentioned abpve to run the script, you will need an input file, specifically 
 ### Example 3: multiple locations extraction, different variables and different depths
 ```
 {
-    "IndicatorPath": "https://github.com/suadha93/ParFlow_data_extraction_tool/DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv_d.nc",
+    "IndicatorPath": "https://github.com/suadha93/ParFlow_data_extraction_tool/DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc",
     "locations": [
         {
             "stationID": "example_station_1",
