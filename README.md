@@ -69,7 +69,7 @@ export PYTHONPATH=$PYTHONPATH:$(pwd)
 
 To run the script you will need input file, a JSON file which includes information on the dataset you want to extract from. Examples are provided in the Usage section.
     the file should include the following infromation:
-    ``` bash
+    bash
              		
 	     {
         "IndicatorPath": "https://github.com/suadha93/ParFlow_data_extraction_tool/DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv_d.nc",
@@ -82,6 +82,7 @@ To run the script you will need input file, a JSON file which includes informati
             "Depth": " "
            }
         ]
+	    }
     
    stationID: name for your station/location\
    stationLat, stationLon: latitude and longitude of the station/location\
