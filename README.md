@@ -26,16 +26,15 @@ Ensure you have Python version 3.0 or newer installed, then install the necessar
 For more information on how to install packages follow the steps available [here](https://packaging.python.org/en/latest/tutorials/installing-packages/).                                       
 
        
-Below are step-by-step instructions on how to install the tool and usage examples.
 
 ## Installation of the extraction tool 
 
-Clone the repository as usual
+Clone the repository 
 
 ``` bash
 git clone https://github.com/suadha93/ParFlow_data_extraction_tool.git
 ```
-
+No further steps necessary
 
 ## Accessing the dataset from the THREDDS server
 
@@ -61,6 +60,8 @@ If you chose to access the dataset using OPENDAP, you have to copy the data url 
 
 ## Usage 
 
+Below are step-by-step instructions on how to use the tool and some example.
+
 Navigate to the repository
 
 ``` bash
@@ -73,6 +74,8 @@ To use the tool within other projects, you have to extend your local PYTHONPATH,
 cd ParFlow_data_extraction_tool
 export PYTHONPATH=$PYTHONPATH:$(pwd)
 ```
+
+This script is controlled by a JSON file. A key feature of the tool is that it does not download the entire dataset from the server. Instead, it extracts data for a specific location and saves it as a CSV file or returns it as a variable.
 To run the script, you will need an input file, specifically a JSON file that includes information about the dataset you want to extract from. Examples are provided in the "Usage" section. The file should include the following information:
 
 ```
