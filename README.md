@@ -176,12 +176,12 @@ There are two ways to run the tool
 1- using a wrapper function that simplifies the extraction of time-series data and variables. To run the wrapper, use the following command format:
 
 ```
-python wrapper.py data_input.json output_format
+./wrapper.py data_input.json output_format
 ```
 - data_input.json: Path to the JSON file containing the input data.
 - output_format: Desired output format, either 'csv' or 'var'.
 
-Alternatively, you can directly use the tool in your script as follows:
+2- Using the tool directly in your script as follows:
 
 ### Extracting a time-series
 
