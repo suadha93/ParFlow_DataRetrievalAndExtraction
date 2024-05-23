@@ -80,10 +80,10 @@ To run the script, you will need an input file, specifically a JSON file that in
     ]
 }
 ```
-   IndicatorPath: the path to the indicator netcdf file, string\ 
-   stationID: name for your station/location, string\ 
-   stationLat, stationLon: latitude and longitude of the station/location, integer\ 
-   ParFlowData : the path to the dataset in the THREDDS server, or where the dataset is saved, string\ 
+   IndicatorPath: the path to the indicator netcdf file, string\
+   stationID: name for your station/location, string\
+   stationLat, stationLon: latitude and longitude of the station/location, integer\
+   ParFlowData : the path to the dataset in the THREDDS server, or where the dataset is saved, string\
    Depth: the needed depth in meters, integer
 
 #### Note:
