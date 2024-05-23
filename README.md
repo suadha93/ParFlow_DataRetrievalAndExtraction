@@ -96,6 +96,52 @@ For running the tool you would need two inputs:
    
 This script is controlled by the JSON file. A key feature of the tool is that it does not download the entire dataset from the server. Instead, it extracts data for a specific location and saves it as a CSV file or returns it as a variable.
 
+### Running the tool
+There are two ways to run the tool: 
+
+1- Using a wrapper function that simplifies the extraction of time-series data and variables. To run the wrapper, use the following command format:
+
+```
+./wrapper.py data_input.json output_format
+```
+- data_input.json: Path to the JSON file containing the input data.
+- output_format: Desired output format, either 'csv' or 'var'.
+  
+Ensure that your wrapper.py script is made executable by executing the following command:
+
+```
+chmod +x wrapper.py
+```
+
+2- Using the tool directly in your script as follows:
+
+#### Extracting a time-series
+
+```
+from data_extraction_tool import data_extraction_csv
+data_input = 'path/to/your/data_input.json"
+data_extraction_csv(data_input)
+```
+This will generate a CSV file for each station specified in the input file.
+
+#### Extracting a variable
+
+```
+from data_extraction_tool import data_extraction_variable
+data_input = 'path/to/your/data_input.json"
+data = data_extraction_variable(data_input)
+```
+The results will return the variables as an array. If more than one location or variable is specified, all results will be included in a single array, with each variable occupying its own row. The structure of the array is as follows:
+
+```
+[
+ [ results from station_1],
+ [ results from station_2],
+ [ results from station_3],
+ ...
+]
+```
+
 ### Examples for the input file 
 As mentioned above to run the script, you will a JSON file. Below are some examples of how the JSON file should be structured:
 
@@ -167,50 +213,7 @@ As mentioned above to run the script, you will a JSON file. Below are some examp
 ```
 **Note: The URL of the indicator file must be updated according to the location of your repository.**
 
-There are two ways to run the tool: 
 
-1- using a wrapper function that simplifies the extraction of time-series data and variables. To run the wrapper, use the following command format:
-
-```
-./wrapper.py data_input.json output_format
-```
-- data_input.json: Path to the JSON file containing the input data.
-- output_format: Desired output format, either 'csv' or 'var'.
-  
-Ensure that your wrapper.py script is made executable by executing the following command:
-
-```
-chmod +x wrapper.py
-```
-
-2- Using the tool directly in your script as follows:
-
-#### Extracting a time-series
-
-```
-from data_extraction_tool import data_extraction_csv
-data_input = 'path/to/your/data_input.json"
-data_extraction_csv(data_input)
-```
-This will generate a CSV file for each station specified in the input file.
-
-#### Extracting a variable
-
-```
-from data_extraction_tool import data_extraction_variable
-data_input = 'path/to/your/data_input.json"
-data = data_extraction_variable(data_input)
-```
-The results will return the variables as an array. If more than one location or variable is specified, all results will be included in a single array, with each variable occupying its own row. The structure of the array is as follows:
-
-```
-[
- [ results from station_1],
- [ results from station_2],
- [ results from station_3],
- ...
-]
-```
 #### Important notes:
 
 - The simulations are calculated for 15 layers from the surface to 60m depth in mm water column each depth represents the lower boundary of the layer, their thickness varies with depth. The depths (in meters) are available as follows: 60.0, 42.0, 27.0, 17.0, 7.0, 3.0, 2.0, 1.3, 0.8, 0.5, 0.3,0.17, 0.1, 0.05, 0.02. If the depth inserted as input falls between two layer, the data extracted will be for the lower boundary of the layer.
