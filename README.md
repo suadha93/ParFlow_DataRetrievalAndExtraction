@@ -97,5 +97,7 @@ To run the script you will need input file, a JSON file which includes informati
 ## Usage
 We have provided a convenient wrapper function that simplifies the extraction of time-series data and variables. To run the wrapper, use the following command format:
 bash
+```
 python wrapper.py data_input.json output_format
+```
 
