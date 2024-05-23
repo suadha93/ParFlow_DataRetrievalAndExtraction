@@ -243,6 +243,8 @@ def data_extraction_csv(data_input):
                     writer.writerow(['stationLat:',f'{stationLat}'])
                     writer.writerow(['stationLon:',f'{stationLon}'])
                     writer.writerow(['Parameter:',variable_long_name])
+                    if var_shape.ndim != 3:
+                       writer.writerow(['Depth:',depth])
                     writer.writerow(['Unit:',unit])
                     writer.writerow(['Time aggregation:','daily'])
                     writer.writerow(['Institution:',institution])
