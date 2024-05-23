@@ -198,13 +198,14 @@ from data_extraction_tool import data_extraction_variable
 data_input = 'path/to/your/data_input.json"
 data = data_extraction_variable(data_input)
 ```
-The results will return the variables as an array. If more than one location or variable is specified, all results will be included in a single array, with each variable occupying its own row. An example of the structure of the array is as follows:
+The results will return the variables as an array. If more than one location or variable is specified, all results will be included in a single array, with each variable occupying its own row. The structure of the array is as follows:
 
 ```
 [
  [ results from station_1],
  [ results from station_2],
- [ results from station_3],...
+ [ results from station_3],
+ ...
 ]
 
 ```
