@@ -150,14 +150,14 @@ As mentioned abpve to run the script, you will need an input file, specifically 
             "stationLat": 50.94819, 
             "stationLon": 6.35748,
             "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/forecasts_daily/vsf_DE05_ECMWF-HRES_forecast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-d00-v4_1day_2024052012.0012-0240.nc",
-            "Depth": "5"
+            "Depth": 5
         },
         {
             "stationID": "example_station_3",
             "stationLat": 50.93718,
             "stationLon": 6.35851,
             "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/forecasts_daily/tet_DE05_ECMWF-HRES_forecast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-d00-v4_1day_2024051912.0012-0240.nc",
-            "Depth": "15"
+            "Depth": 15
         }
     ]
 }
