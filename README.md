@@ -100,4 +100,6 @@ bash
 ```
 python wrapper.py data_input.json output_format
 ```
+- data_input.json: Path to the JSON file containing the input data.
+- output_format: Desired output format, either 'csv' or 'var'.
 
