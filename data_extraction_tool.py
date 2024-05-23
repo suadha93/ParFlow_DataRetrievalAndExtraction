@@ -244,7 +244,7 @@ def data_extraction_csv(data_input):
                     writer.writerow(['stationLon:',f'{stationLon}'])
                     writer.writerow(['Parameter:',variable_long_name])
                     if var_shape.ndim != 3:
-                       writer.writerow(['Depth:',depth])
+                       writer.writerow(['Depth:',f'{depth} m'])
                     writer.writerow(['Unit:',unit])
                     writer.writerow(['Time aggregation:','daily'])
                     writer.writerow(['Institution:',institution])
