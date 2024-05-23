@@ -163,7 +163,7 @@ As mentioned abpve to run the script, you will need an input file, specifically 
 }
 ```
 
-We have provided a convenient wrapper function that simplifies the extraction of time-series data and variables. To run the wrapper, use the following command format:
+We have provided a wrapper function that simplifies the extraction of time-series data and variables. To run the wrapper, use the following command format:
 
 ```
 python wrapper.py data_input.json output_format
