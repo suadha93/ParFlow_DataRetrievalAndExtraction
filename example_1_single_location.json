@@ -1,0 +1,12 @@
+{
+    "IndicatorPath": "https://github.com/suadha93/ParFlow_data_extraction_tool/DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc",
+    "locations": [
+        {
+            "stationID": "example_station_1",
+            "stationLat": 51.21998,
+            "stationLon": 4.83778,
+            "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v2/paw_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v02bJurecaGpuProdClimatologyTl_1hr2daily_20220101-20221231.nc",
+            "Depth": 10
+        }
+    ]
+}
