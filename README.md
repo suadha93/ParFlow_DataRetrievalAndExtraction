@@ -104,9 +104,9 @@ This script is controlled by the JSON file. A key feature of the tool is that it
 To run the script, you will need an input file, specifically a JSON file that includes information about the dataset you want to extract from. Examples are provided in the "Usage" section. The file should include the following information:
 
 ### Examples for the input file 
-As mentioned abpve to run the script, you will need an input file, specifically a JSON file. Below are some examples of how the JSON file should be structured:
+As mentioned above to run the script, you will need an input file, specifically a JSON file. Below are some examples of how the JSON file should be structured:
 
-### Example 1: single location extraction
+#### Example 1: single location extraction
 ```
 {
     "IndicatorPath": "https://github.com/suadha93/ParFlow_data_extraction_tool/DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc",
@@ -121,7 +121,7 @@ As mentioned abpve to run the script, you will need an input file, specifically 
     ]
 }
 ```
-### Example 2: multiple locations extraction, same variable
+#### Example 2: multiple locations extraction, same variable
 ```
 {
     "IndicatorPath": "https://github.com/suadha93/ParFlow_data_extraction_tool/DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc",
@@ -143,7 +143,7 @@ As mentioned abpve to run the script, you will need an input file, specifically 
     ]
 }
 ```
-### Example 3: multiple locations extraction, different variables and different depths
+#### Example 3: multiple locations extraction, different variables and different depths
 ```
 {
     "IndicatorPath": "https://github.com/suadha93/ParFlow_data_extraction_tool/DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc",
@@ -184,7 +184,7 @@ There are two ways to run the tool
 
 2- Using the tool directly in your script as follows:
 
-### Extracting a time-series
+#### Extracting a time-series
 
 ```
 from data_extraction_tool import data_extraction_csv
@@ -193,7 +193,7 @@ data_extraction_csv(data_input)
 ```
 This will generate a CSV file for each station specified in the input file.
 
-### Extracting a variable
+#### Extracting a variable
 
 ```
 from data_extraction_tool import data_extraction_variable
