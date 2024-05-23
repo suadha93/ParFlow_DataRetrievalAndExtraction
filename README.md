@@ -1,5 +1,3 @@
-# Data extraction tool for the hydrological model ParFlow
-
 # Purpose
 
 This repository provides scripts and examples for extracting time-series data and variables from an open-access research dataset. The dataset contains experimental simulation results and derived diagnostics from ParFlow hydrological model runs, specifically ParFlowCLM DE06. You can find more information about the project [here](https://adapter-projekt.org/).
@@ -99,7 +97,42 @@ To run the script, you will need an input file, specifically a JSON file that in
 To run the script, you will need an input file, specifically a JSON file that includes information about the dataset you want to extract from. Below are some examples of how the JSON file should be structured:
 
 ### Example 1: single location extraction
-
+```
+{
+    "IndicatorPath": "https://github.com/suadha93/ParFlow_data_extraction_tool/DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv_d.nc",
+    "locations": [
+        {
+            "stationID": "example_station_1",
+            "stationLat": "51.21998",
+            "stationLon": "4.83778",
+            "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v2/paw_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v02bJurecaGpuProdClimatologyTl_1hr2daily_20220101-20221231.nc",
+            "Depth": "10"
+        }
+    ]
+}
+```
+### Example 2: multiple locations extraction
+```
+{
+    "IndicatorPath": "https://github.com/suadha93/ParFlow_data_extraction_tool/DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv_d.nc",
+    "locations": [
+        {
+            "stationID": "example_station_1",
+            "stationLat": "50.93686",
+            "stationLon": "6.36174",
+            "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v2/wtd_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v02bJurecaGpuProdClimatologyTl_1day_20230101-20231231.nc",
+            "Depth": "7"
+        },
+        {
+            "stationID": "example_station_2",
+            "stationLat": "52.37677",
+            "stationLon": "5.04244",
+            "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v2/wtd_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v02bJurecaGpuProdClimatologyTl_1day_20230101-20231231.nc",
+            "Depth": "5"
+        }
+    ]
+}
+```
 
 We have provided a convenient wrapper function that simplifies the extraction of time-series data and variables. To run the wrapper, use the following command format:
 bash
