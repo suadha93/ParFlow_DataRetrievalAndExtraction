@@ -34,7 +34,7 @@ Clone the repository
 ``` bash
 git clone https://github.com/suadha93/ParFlow_data_extraction_tool.git
 ```
-No further steps necessary
+No further steps necessary.
 
 ## Accessing the dataset from the THREDDS server
 
@@ -60,7 +60,7 @@ If you chose to access the dataset using OPENDAP, you have to copy the data url 
 
 ## Usage 
 
-Below are step-by-step instructions on how to use the tool and some example.
+Below are step-by-step instructions on how to use the tool and some examples.
 
 Navigate to the repository
 
@@ -75,9 +75,9 @@ cd ParFlow_data_extraction_tool
 export PYTHONPATH=$PYTHONPATH:$(pwd)
 ```
 
-This script is controlled by a JSON file. A key feature of the tool is that it does not download the entire dataset from the server. Instead, it extracts data for a specific location and saves it as a CSV file or returns it as a variable.
-To run the script, you will need an input file, specifically a JSON file that includes information about the dataset you want to extract from. Examples are provided in the "Usage" section. The file should include the following information:
+For running the tool you would need two inputs:
 
+ 1. Input file : this is a JSON file which includes information on the dataset you want to extract from. The structure of the JSON file should be as follows:
 ```
 {
     "IndicatorPath": " ",
@@ -90,15 +90,17 @@ To run the script, you will need an input file, specifically a JSON file that in
             "Depth": 
         }
     ]
-}
-```
+
    IndicatorPath: the path to the indicator netcdf file, string\
    stationID: name for your station/location, string\
    stationLat, stationLon: latitude and longitude of the station/location, integer\
    ParFlowData : the path to the dataset in the THREDDS server, or where the dataset is saved, string\
    Depth: the needed depth in meters, integer
 
-
+2. The indicator file "DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc", it is as an input to the JSON file. This dataset is used to extract the latidudes and longitudes, and also it is important to ensure that the selected location does not fall directly in a water body.
+   
+This script is controlled by the JSON file. A key feature of the tool is that it does not download the entire dataset from the server. Instead, it extracts data for a specific location and saves it as a CSV file or returns it as a variable.
+To run the script, you will need an input file, specifically a JSON file that includes information about the dataset you want to extract from. Examples are provided in the "Usage" section. The file should include the following information:
 
 #### Note:
 
