@@ -363,11 +363,12 @@ def data_extraction_variable(data_input):
                     var_shape = nc.variables[variable]
                     variable_long_name = nc.variables[variable].long_name
                     if var_shape.ndim == 3:
-
+                        
                        print(f'{variable_long_name} is a 2D variable, no depth information needed')
                        var=nc.variables[variable][:,MapYIdx,MapXIdx]
                        var = np.array(var.reshape(1, 365))
                        var_array = np.ma.append(var_array, var,axis=0)
+                        
                     else:
                         var=nc.variables[variable][:,depth_index,MapYIdx,MapXIdx]
                         var = np.array(var.reshape(1, 365)) 
