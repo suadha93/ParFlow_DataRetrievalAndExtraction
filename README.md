@@ -90,7 +90,7 @@ For running the tool you would need two inputs:
             "Depth": 
         }
     ]
-
+```
    IndicatorPath: the path to the indicator netcdf file, string\
    stationID: name for your station/location, string\
    stationLat, stationLon: latitude and longitude of the station/location, integer\
@@ -101,11 +101,6 @@ For running the tool you would need two inputs:
    
 This script is controlled by the JSON file. A key feature of the tool is that it does not download the entire dataset from the server. Instead, it extracts data for a specific location and saves it as a CSV file or returns it as a variable.
 To run the script, you will need an input file, specifically a JSON file that includes information about the dataset you want to extract from. Examples are provided in the "Usage" section. The file should include the following information:
-
-#### Note:
-
-- The simulations are calculated for 15 layers from the surface to 60m depth in mm water column each depth represents the lower boundary of the layer, their thickness varies with depth. The depths (in meters) are available as follows: 60.0, 42.0, 27.0, 17.0, 7.0, 3.0, 2.0, 1.3, 0.8, 0.5, 0.3,0.17, 0.1, 0.05, 0.02. If the depth inserted as input falls between two layer, the data extracted will be for the lower boundary of the layer.
-
 
 ### Examples for the input file 
 As mentioned abpve to run the script, you will need an input file, specifically a JSON file. Below are some examples of how the JSON file should be structured:
@@ -203,8 +198,20 @@ from data_extraction_tool import data_extraction_variable
 data_input = 'path/to/your/data_input.json"
 data = data_extraction_variable(data_input)
 ```
-The results will return the variables as an array. If more than one station is specified, all results will be returned in one array. It is important to ensure that all stations are within the same time period. If they are not, calculate each variable separately.
+The results will return the variables as an array. If more than one location or variable is specified, all results will be included in a single array, with each variable occupying its own row. An example of the structure of the array is as follows:
+
+```
+[
+ [ results from station_1],
+ [ results from station_2],
+ [ results from station_3],...
+]
+
+```
 
 
+#### Important notes:
 
+- The simulations are calculated for 15 layers from the surface to 60m depth in mm water column each depth represents the lower boundary of the layer, their thickness varies with depth. The depths (in meters) are available as follows: 60.0, 42.0, 27.0, 17.0, 7.0, 3.0, 2.0, 1.3, 0.8, 0.5, 0.3,0.17, 0.1, 0.05, 0.02. If the depth inserted as input falls between two layer, the data extracted will be for the lower boundary of the layer.
+- Different variables which different time spans which can't be covered in one query. Therefore, when dealing with different time spans (e.g., a variable from climatology_v2 and one from a forecast_daily), it is necessary to create a separate query for each.
 
