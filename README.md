@@ -6,7 +6,8 @@ This repository provides scripts and examples for extracting time-series data an
 
 The dataset includes a selection of variables and diagnostics accessible via a THREDDS server:
 - [THREDDS catalog](https://service.tereno.net/thredds/catalog/forecastnrw/products/catalog.html)
-- [Detailed dataset information](https://datapub.fz-juelich.de/slts/FZJ_ParFlow_DE06_hydrologic_forecasts/index.html)
+- 
+[Detailed dataset information](https://datapub.fz-juelich.de/slts/FZJ_ParFlow_DE06_hydrologic_forecasts/index.html)
 
 The dataset comprises both 2D and 3D variables, with the third dimension accounting for depth.
 
