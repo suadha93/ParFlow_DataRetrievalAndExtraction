@@ -1,0 +1,26 @@
+{
+    "IndicatorPath": "https://github.com/suadha93/ParFlow_data_extraction_tool/DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc",
+    "locations": [
+        {
+            "stationID": "example_station_1",
+            "stationLat": 50.94666,
+            "stationLon": 6.36094,
+            "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/forecasts_daily/vwc_DE05_ECMWF-HRES_forecast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-d00-v4_1day_2024052012.0012-0240.nc",
+            "Depth": 10
+        },
+        {
+            "stationID": "example_station_2",
+            "stationLat": 50.94819, 
+            "stationLon": 6.35748,
+            "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/forecasts_daily/vsf_DE05_ECMWF-HRES_forecast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-d00-v4_1day_2024052012.0012-0240.nc",
+            "Depth": 5
+        },
+        {
+            "stationID": "example_station_3",
+            "stationLat": 50.93718,
+            "stationLon": 6.35851,
+            "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/forecasts_daily/tet_DE05_ECMWF-HRES_forecast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-d00-v4_1day_2024051912.0012-0240.nc",
+            "Depth": 15
+        }
+    ]
+}
