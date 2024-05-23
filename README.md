@@ -28,7 +28,7 @@ Clone the repository
 ``` bash
 git clone https://github.com/suadha93/ParFlow_data_extraction_tool.git
 ```
-No further steps necessary.
+No further steps necessary are required for the installation.
 
 ## Accessing the dataset from the THREDDS server
 
