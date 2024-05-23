@@ -66,20 +66,20 @@ export PYTHONPATH=$PYTHONPATH:$(pwd)
 ```
 To run the script, you will need an input file, specifically a JSON file that includes information about the dataset you want to extract from. Examples are provided in the Usage section. The file should include the following information:
     the file should include the following infromation:
-    bash
-             		
-	     {
-        "IndicatorPath": " ",
-        "locations": [
-             {
+```
+{
+    "IndicatorPath": " ",
+    "locations": [
+        {
             "stationID": " ",
-            "stationLat": " ",
-            "stationLon": " ",
+            "stationLat": ,
+            "stationLon": ,
             "ParFlowData": " ",
-            "Depth": " "
-           }
-        ]
-	    }
+            "Depth": 
+        }
+    ]
+}
+```
    IndicatorPath: the path to the indicator netcdf file
    stationID: name for your station/location\
    stationLat, stationLon: latitude and longitude of the station/location\
@@ -103,32 +103,61 @@ To run the script, you will need an input file, specifically a JSON file that in
     "locations": [
         {
             "stationID": "example_station_1",
-            "stationLat": "51.21998",
-            "stationLon": "4.83778",
+            "stationLat": 51.21998,
+            "stationLon": 4.83778,
             "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v2/paw_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v02bJurecaGpuProdClimatologyTl_1hr2daily_20220101-20221231.nc",
-            "Depth": "10"
+            "Depth": 10
         }
     ]
 }
 ```
-### Example 2: multiple locations extraction
+### Example 2: multiple locations extraction, same variable
 ```
 {
     "IndicatorPath": "https://github.com/suadha93/ParFlow_data_extraction_tool/DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv_d.nc",
     "locations": [
         {
             "stationID": "example_station_1",
-            "stationLat": "50.93686",
-            "stationLon": "6.36174",
+            "stationLat": 50.93686,
+            "stationLon": 6.36174,
             "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v2/wtd_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v02bJurecaGpuProdClimatologyTl_1day_20230101-20231231.nc",
-            "Depth": "7"
+            "Depth": 7
         },
         {
             "stationID": "example_station_2",
-            "stationLat": "52.37677",
-            "stationLon": "5.04244",
+            "stationLat": 52.37677,
+            "stationLon": 5.04244,
             "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v2/wtd_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v02bJurecaGpuProdClimatologyTl_1day_20230101-20231231.nc",
+            "Depth": 7
+        }
+    ]
+}
+```
+### Example 3: multiple locations extraction, different variables and different depths
+```
+{
+    "IndicatorPath": "https://github.com/suadha93/ParFlow_data_extraction_tool/DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv_d.nc",
+    "locations": [
+        {
+            "stationID": "example_station_1",
+            "stationLat": 50.94666,
+            "stationLon": 6.36094,
+            "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/forecasts_daily/vwc_DE05_ECMWF-HRES_forecast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-d00-v4_1day_2024052012.0012-0240.nc",
+            "Depth": 10
+        },
+        {
+            "stationID": "example_station_2",
+            "stationLat": 50.94819, 
+            "stationLon": 6.35748,
+            "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/forecasts_daily/vsf_DE05_ECMWF-HRES_forecast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-d00-v4_1day_2024052012.0012-0240.nc",
             "Depth": "5"
+        },
+        {
+            "stationID": "example_station_3",
+            "stationLat": 50.93718,
+            "stationLon": 6.35851,
+            "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/forecasts_daily/tet_DE05_ECMWF-HRES_forecast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-d00-v4_1day_2024051912.0012-0240.nc",
+            "Depth": "15"
         }
     ]
 }
@@ -142,28 +171,10 @@ python wrapper.py data_input.json output_format
 - data_input.json: Path to the JSON file containing the input data.
 - output_format: Desired output format, either 'csv' or 'var'.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Alternatively, you can directly use the tool in your script as follows:
 
 ### Extracting a time-series
 
- 
 ```
 from data_extraction_tool import data_extraction_csv
 data_input = 'path/to/your/data_input.json"
