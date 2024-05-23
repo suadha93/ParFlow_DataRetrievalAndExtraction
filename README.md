@@ -98,7 +98,7 @@ For running the tool you would need two inputs:
    ParFlowData : the path to the dataset in the THREDDS server, or where the dataset is saved, string\
    Depth: the needed depth in meters, integer
 
-2. The indicator file "DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc", it is as an input to the JSON file. This dataset is used to extract the latidudes and longitudes, and also it is important to ensure that the selected location does not fall directly in a water body.
+2. The indicator file "DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc", serves as input to the JSON file. This dataset is used to extract the latidudes and longitudes, and also it is important to ensure that the selected location does not fall directly in a water body.
    
 This script is controlled by the JSON file. A key feature of the tool is that it does not download the entire dataset from the server. Instead, it extracts data for a specific location and saves it as a CSV file or returns it as a variable.
 To run the script, you will need an input file, specifically a JSON file that includes information about the dataset you want to extract from. Examples are provided in the "Usage" section. The file should include the following information:
