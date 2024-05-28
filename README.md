@@ -154,7 +154,7 @@ As mentioned above to run the script, you will a JSON file. Below are some examp
             "stationID": "example_station_1",
             "stationLat": 51.21998,
             "stationLon": 4.83778,
-            "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v2/paw_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v02bJurecaGpuProdClimatologyTl_1hr2daily_20220101-20221231.nc",
+            "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v2/paw_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v02bJurecaGpuProdClimatologyTl_1day_20230101-20231231.nc",
             "Depth": 10
         }
     ]
