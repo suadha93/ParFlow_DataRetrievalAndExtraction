@@ -1,5 +1,5 @@
 {
-    "IndicatorPath": "https://github.com/suadha93/ParFlow_data_extraction_tool/DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc",
+    "IndicatorPath": "DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc",
     "locations": [
         {
             "stationID": "example_station_1",
