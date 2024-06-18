@@ -5,6 +5,11 @@ locates the lower boundary layer containing the specified depth.
 the second function extracts a time series for a specific location
 and writes it in an ASCII file. The third function has similar functionality
 to the function before, but it returns the variable for the location for all depths.
+
+
+ToDo: hardcoding nameCSV
+
+
 """
 
 import numpy as np
@@ -211,7 +216,7 @@ def data_extraction_csv(data_input):
                     var_shape = nc.variables[variable]
                     variable_long_name = nc.variables[variable].long_name
                     if var_shape.ndim == 3:
-                        print(f'{variable_long_name} is a 2D variable, no depth information needed')
+                        print(f'{variable_long_name} is a 2D variable, depth information ignored')
                         var=nc.variables[variable][:,MapYIdx,MapXIdx]
                         unit = nc.variables[variable]
                         unit = unit.units
@@ -234,7 +239,7 @@ def data_extraction_csv(data_input):
                     print(f'data for Lat:{stationLat}, Lon:{stationLon} is extracted')
 
                     #open an CSV and save the time series
-                    nameCSV = f'Station_{stationID}_ADAPTER_DE05_ECMWF-HRES-forecast_FZJ-IBG3-ParFlowCLM380_v04aJuwelsGpuProd_{variable}_{startDate}-{endDate}.csv'
+                    nameCSV = f'siteData_{stationID}_ADAPTER_DE05_ECMWF-HRES-forecast_FZJ-IBG3-ParFlowCLM380_v04aJuwelsGpuProd_{variable}_{startDate}-{endDate}.csv'
                     today_date = datetime.datetime.today().strftime('%Y-%m-%d')
 
                     fCSV = open(nameCSV, 'w', newline='')
@@ -374,4 +379,3 @@ def data_extraction_variable(data_input):
                         var = np.array(var.reshape(1, 365)) 
                         var_array = np.ma.append(var_array, var,axis=0)
     return(var_array)
-   
