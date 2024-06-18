@@ -1,0 +1,26 @@
+{
+    "IndicatorPath": "DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc",
+    "locations": [
+        {
+            "stationID": "example4_site1",
+            "stationLat": 51.00000,
+            "stationLon": 6.50000,
+            "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v2/vwc_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v02bJurecaGpuProdClimatologyTl_1day_20230101-20231231.nc",
+            "Depth": 0.3
+        },
+        {
+            "stationID": "example4_site2",
+            "stationLat": 51.00000,
+            "stationLon": 6.50000,
+            "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v2/sss_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v02bJurecaGpuProdClimatologyTl_1day_20230101-20231231.nc",
+            "Depth": 0.3
+        },
+        {
+            "stationID": "example4_site3",
+            "stationLat": 51.00000,
+            "stationLon": 6.50000,
+            "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v2/ifl_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v02bJurecaGpuProdClimatologyTl_1day_20230101-20231231.nc",
+            "Depth": 0.3
+        }
+    ]
+}
