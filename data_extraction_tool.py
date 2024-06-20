@@ -1,14 +1,20 @@
+#!/usr/bin/env python
 
-""" This module contains three functions designed to extract variables
-from the ParFlow simulations. The first function 
-locates the lower boundary layer containing the specified depth. 
-the second function extracts a time series for a specific location
-and writes it in an ASCII file. The third function has similar functionality
-to the function before, but it returns the variable for the location for all depths.
+"""This module extracts 1D (timeseries) data from gridded netCDF files staged 
+on a remote THREDDS server. Data can be extracted for multiple positions on
+the grid (longitude, latitude, and depth) and multiple variables.
 
+PURPOSE:
 
-ToDo: hardcoding nameCSV
+INPUTS:
 
+OUTPUTS:
+
+FUNCTIONALITIES:
+
+USAGE:
+
+USAGE EXAMPLES:
 
 """
 
@@ -19,14 +25,14 @@ import datetime
 import csv
 import json
 
-
-__author__ = "Suad Hammoudeh"        
-__copyright__ = "Copyright 2024, http://www.fz-juelich.de"        
-__credits__ = [""]                                                              
-__license__ = "MIT"                                                             
-__version__ = "2024-05-08"                                                        
-__maintainer__ = "Suad Hammoudeh"                                                
+__author__ = "Suad HAMMOUDEH, Klaus GEORGEN"
+__copyright__ = "Copyright 2024, http://www.fz-juelich.de"
+__credits__ = [""]
+__license__ = "MIT"
+__version__ = "v1.0.0"
+__maintainer__ = "Suad HAMMOUDEH"
 __email__ = "s.hammoudeh@fz-juelich.de"
+__status__ = "Production"
 
 def spher_dist( lon1, lat1, lon2, lat2, Rearth=6371):
     """ calculate the spherical / haversine distance
