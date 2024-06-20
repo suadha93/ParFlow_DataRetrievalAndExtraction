@@ -291,7 +291,9 @@ def data_extraction_variable(data_input):
         data = json.load(f)
         locations = data['locations']
         indicator = data['IndicatorPath']
-        var_array = np.empty((0,365))
+        #var_array = np.empty((0,365))
+        
+        i = 0
         for location in locations:
             stationID = location["stationID"]
             stationLat = location["stationLat"]
@@ -300,8 +302,7 @@ def data_extraction_variable(data_input):
             depth = location["Depth"]
             print(f'Location: {stationID}')
 
-
-    #finding the index of the Lon and Lat in interest
+            # finding the index of the Lon and Lat in interest
 
             with Dataset(indicator, 'r') as nc:
 
@@ -368,14 +369,30 @@ def data_extraction_variable(data_input):
                     var_shape = nc.variables[variable]
                     variable_long_name = nc.variables[variable].long_name
                     if var_shape.ndim == 3:
-                        
-                       print(f'{variable_long_name} is a 2D variable, no depth information needed')
-                       var=nc.variables[variable][:,MapYIdx,MapXIdx]
-                       var = np.array(var.reshape(1, 365))
-                       var_array = np.ma.append(var_array, var,axis=0)
-                        
+                        print(f'{variable_long_name} is a 2D variable, no depth information needed')
+                        var=nc.variables[variable][:,MapYIdx,MapXIdx]
+                        #print(var.shape) 
+                        #var = np.array(var.reshape(1, var.size))
+                        #var_array = np.ma.append(var_array, var,axis=0)
                     else:
                         var=nc.variables[variable][:,depth_index,MapYIdx,MapXIdx]
-                        var = np.array(var.reshape(1, 365)) 
-                        var_array = np.ma.append(var_array, var,axis=0)
+                        #print(var.shape) 
+                        #var = np.array(var.reshape(1, var.size))
+                        #var = np.array(var.reshape(1, 365)) 
+                        #var_array = np.ma.append(var_array, var,axis=0)
+                    print(var.shape) 
+                    if i == 0:
+                        var_array = np.array(var.reshape(1, var.size))
+                    else:
+                        var_array = np.append(var_array, var.reshape(1, var.size), axis=0)
+                    print(var_array.shape) 
+                    print(var_array)
+
+            i += 1
+
     return(var_array)
+
+
+if __name__ == "__main__":
+
+    main()

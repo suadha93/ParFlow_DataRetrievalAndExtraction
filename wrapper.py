@@ -54,21 +54,22 @@ __status__ = "Production"
 def wrapper():
 
     if len(sys.argv) != 3:
-        print("Usage: python wrapper.py data_input.json output_format (csv or var)")
+        print("USAGE: python wrapper.py data_input.json output_format")
         sys.exit(1)
 
     data_input = sys.argv[1]
     output_format = sys.argv[2]
 
     if output_format not in ["csv", "var"]:
-        print("Invalid output format. Please choose 'csv' or 'var'.")
+        print("Invalid output format. Please choose either 'csv' or 'var'.")
         sys.exit(1)
 
     if output_format == "csv":
         data_extraction_csv(data_input)
+        print("Variable extracted successfully and written to csv file")
     elif output_format == "var":
         data = data_extraction_variable(data_input)
-        print("Variable extracted successfully:", data)
+        print("Variable extracted successfully and stored in data-variable:", data)
 
 if __name__ == "__main__":
 
