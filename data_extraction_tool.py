@@ -93,10 +93,11 @@ LIMITATIONS:
 import numpy as np
 from netCDF4 import Dataset
 from netCDF4 import num2date
+
+import sys
 import datetime
 import csv
 import json
-import sys
 
 __author__ = "Suad HAMMOUDEH, Klaus GEORGEN"
 __copyright__ = "Copyright 2024, http://www.fz-juelich.de"
