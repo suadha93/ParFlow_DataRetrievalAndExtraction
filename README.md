@@ -10,7 +10,7 @@ The tools provided here serve (i) as a means to access and retrieve data from sp
 
 ### Prerequisites
 
-`Python v3.x` with the following non-standard packages in their recent version that are not part of the Python standard library:
+`Python v3.x` with the following packages that are not part of the Python standard library in their recent versions:
 - `numpy`
 - `netCDF4`
 
@@ -43,8 +43,8 @@ python wrapper.py data_input.json output_format
 ```
 
 (Command line) parameters:
-- data_input.json: JSON file (including path) containing the run-control data which specifies which data(sets) to retrieve timeseries from for which geographic location(s) and which depth(s)
-- output_format: output format, either 'csv' or 'var'; the `data_extraction_tool.py` always returns a data array, no matter which option is set; specify 'csv' to obtain also a csv file per json record
+- `data_input.json`: JSON file (including path) containing the run-control data which specifies which data(sets) to retrieve timeseries from for which geographic location(s) and which depth(s)
+- `output_format`: output format, either 'csv' or 'var'; the `data_extraction_tool.py` always returns a data array, no matter which option is set; specify 'csv' to obtain also a csv file per json record
 
 ### Interactively
 
@@ -57,9 +57,9 @@ t.b.a.
 See `wrapper.py` on how to call the function from the module.
 
 ### Notes on outputs
-- In case there is more than one record in the json file multiple csv files are written, one record per file.
+- In case there is more than one record in the JSON file, multiple csv files are written, one record per file.
+- The csv files are always written to the directory from where the `wrapper.py` is called.
 - Aside from the csv file the extracted and retrieved data is also always returend as a Python numpy ndarray. If more than one JSON record (i.e., multiple locations, depths, variables / diagnostics) is specified, all results will be combind in a single array, with each dataset occupying its own row. The structure of the array is as follows:
-- The csv files are always written to the directory form where the `wrapper.py` is called.
 
 ```
 [
@@ -72,11 +72,11 @@ See `wrapper.py` on how to call the function from the module.
 
 ### Inputs
 
-Aside from the netCDF files on the THREDDS server, the tool needs two inputs.
+Aside from the netCDF files on the THREDDS server, the tool needs two inputs: JSON and indicator files.
 
 #### JSON run-control file structure and examples
 
-In order to systematically test the tool and to provide the user with a range of examples, different `JSON` files are provided. The JSON runcontrol files specify wich netCDF files shall be used (hindcast or forecast, which diagnostic) and for which locations timeseries are to be exracted at which depth. One JSON file may have multiple records. The structure of the JSON file should be as follows:
+In order to systematically test the tool and to provide the user with a range of examples, different `JSON` files are provided (`*.json`). The JSON runcontrol files specify wich netCDF files shall be used (hindcast or forecast, which diagnostic) and for which locations timeseries are to be exracted at which depth. One JSON file may have multiple records. The structure of the JSON file should be as follows:
 
 ```
 {
@@ -87,7 +87,7 @@ In order to systematically test the tool and to provide the user with a range of
             "locationLat": <latitude of location [decimal degrees], maximum 5 digits, [float]>,
             "locationLon": <longitude of location [decimal degrees], maximum 5 digits, [float]>,
             "simData": "<path and filename or URL on THREDDS server of the netCDF simulation data file, [string]>",
-            "depth": <deph for which data is to be extracted [m], can be positive of negative, [float]>
+            "depth": <depth for which data is to be extracted [m], can be positive of negative, [float]>
         }
     ]
 }
@@ -95,13 +95,16 @@ In order to systematically test the tool and to provide the user with a range of
 
 #### External parameter or 'indicator' file
 
-- The tool needs a so-called "indicator" file, which contains information on the hydrofacies distribution in ParFlow that is used in the extraction ool to dertermine whether a specified location is on a water body (river, lake, ocean grid element or not) and the model grid specification as Lon and Lat coordinate arrays in decimal degrees, which specify the model grid centre points. 
-- The indicator file is specific to a certain simulaiton experiment and its setup and configuration.
-- Here we provide the indicator file `DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc`. serves as input to the JSON file.
+- The tool needs a so-called "indicator" file, which contains information on the hydrofacies distribution in ParFlow that is used in the extraction tool to determine whether a specified location is on a water body (river, lake, or ocean grid element), and information on the model grid specification as Lon and Lat coordinate arrays in decimal degrees, which specify the model grid centre points. 
+- The indicator file is specific to a certain simulation experiment and its setup and configuration.
+- Here we provide the indicator file `DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc`.
    
 ### Usage example
 
+This example should run straight away:
+
 ``` bash
+cd ParFlow_data_extraction_tool
 python3 wrapper.py example1_1Loc_1Var_climatology.json csv
 ```
 
@@ -128,7 +131,7 @@ This repository contains tools, which are in conjunction with the ["Experimental
 2. On the [THREDDS data server](https://service.tereno.net/thredds/catalog/forecastnrw/products/catalog.html) navigate the directory of interest, e.g., the [daily forecasts](https://service.tereno.net/thredds/catalog/forecastnrw/products/forecasts_daily/catalog.html)
 3. Select a variable of your choice, e.g., "vwc" (volumetric water content) and click on the filename to follow the URL to the individual data record (filename follows a data reference syntax with a controlled vocabulary and looks, e.g. like this: `vwc_DE05_ECMWF-HRES_forecast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-d00-v4_1day_2024062412.0012-0240.nc`)
 4. On the data record page click on "Access" and "OpenDAP", which takes you to the "OPeNDAP Dataset Access Form" of the specific netCDF data file 
-5. Copy/paste the "Data URL" to your JSON file `simData` entry to retrieve a timeseries from this dataset
+5. **Copy/paste the "Data URL" to your JSON file `simData` entry to retrieve a timeseries from this dataset**
 
 A detailed descrption of the THREDDS server functionality is beyond the scope of this README.
 
@@ -139,7 +142,8 @@ Alternatively to 4.: Click on "HTTPServer" to download the complete netCDF file 
 - The ParFlow DE06 experimental forecast dataset also includes ensemble data; these cannot be used unless the `variable` is manually specified in the code of `data_extraction_tool.py`.
 - Different variables which different time spans which can't be covered in one query. Therefore, when dealing with different time spans (e.g., a variable from climatology_v2 and one from a forecast_daily), it is necessary to create a separate query for each.
 - If intending to use the tool beyond the foreseen applicaiton with the ParFlow post-processed netCDF files files, these files need to be CF compliant and follow certain standard in terms of specification of the dimensions and coordinate axes specifications.
+- If one is using near real time forecast data, one needs to continuosly adapt the `simData` entry in the JSON runcontrol file as the THREDDS server is a rolling archive and the forecast outputs have their initial date and time in the netCDF filename. 
 
 ## License
 
-The tools in this repository is free, open source software and is licensed under the MIT-License.
+The tools in this repository is free, open source software and is licensed under an MIT-License.
