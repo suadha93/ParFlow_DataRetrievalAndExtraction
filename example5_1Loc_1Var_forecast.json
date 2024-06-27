@@ -1,12 +1,12 @@
 {
-    "IndicatorPath": "DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc",
+    "indicatorFile": "DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc",
     "locations": [
         {
-            "stationID": "example5_site1",
-            "stationLat": 52.00000,
-            "stationLon": 13.00000,
-            "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/forecasts_daily/vsf_DE05_ECMWF-HRES_forecast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-d00-v4_1day_2024060212.0012-0240.nc",
-            "Depth": 2.0
+            "locationID": "example5_site1",
+            "locationLat": 53.68584,
+            "locationLon": 0.07000,
+            "simData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/forecasts_daily/vwc_DE05_ECMWF-HRES_forecast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-d00-v4_1day_2024062412.0012-0240.nc",
+            "depth": 0.3
         }
     ]
 }

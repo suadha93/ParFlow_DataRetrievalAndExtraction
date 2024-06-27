@@ -1,26 +1,26 @@
 {
-    "IndicatorPath": "DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc",
+    "indicatorFile": "DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc",
     "locations": [
         {
-            "stationID": "example7_site1",
-            "stationLat": 52.00000,
-            "stationLon": 13.00000,
-            "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/forecasts_daily/vsf_DE05_ECMWF-HRES_forecast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-d00-v4_1day_2024060212.0012-0240.nc",
-            "Depth": 10
+            "locationID": "example7_site1",
+            "locationLat": 52.00000,
+            "locationLon": 13.00000,
+            "simData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/forecasts_daily/vsf_DE05_ECMWF-HRES_forecast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-d00-v4_1day_2024062412.0012-0240.nc",
+            "depth": 1
         },
         {
-            "stationID": "example7_site2",
-            "stationLat": 46.00000, 
-            "stationLon": 11.00000,
-            "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/forecasts_daily/vsf_DE05_ECMWF-HRES_forecast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-d00-v4_1day_2024060312.0012-0240.nc",
-            "Depth": 5
+            "locationID": "example7_site2",
+            "locationLat": 46.00000, 
+            "locationLon": 11.00000,
+            "simData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/forecasts_daily/vsf_DE05_ECMWF-HRES_forecast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-d00-v4_1day_2024062412.0012-0240.nc",
+            "depth": 5
         },
         {
-            "stationID": "example7_site3",
-            "stationLat": 50.00000,
-            "stationLon": 5.00000,
-            "ParFlowData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/forecasts_daily/vsf_DE05_ECMWF-HRES_forecast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-d00-v4_1day_2024060412.0012-0240.nc",
-            "Depth": 1
+            "locationID": "example7_site3",
+            "locationLat": 50.00000,
+            "locationLon": 5.00000,
+            "simData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/forecasts_daily/vsf_DE05_ECMWF-HRES_forecast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-d00-v4_1day_2024062412.0012-0240.nc",
+            "depth": 10
         }
     ]
 }
