@@ -97,7 +97,7 @@ In order to systematically test the tool and to provide the user with a range of
 
 - The tool needs a so-called "indicator" file, which contains information on the hydrofacies distribution in ParFlow that is used in the extraction tool to determine whether a specified location is on a water body (river, lake, or ocean grid element), and information on the model grid specification as Lon and Lat coordinate arrays in decimal degrees, which specify the model grid centre points. 
 - The indicator file is specific to a certain simulation experiment and its setup and configuration.
-- Here we provide the indicator file `DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc`.
+- Here we provide the indicator file `DE-0055_INDICATOR_regridded_rescaled_SoilGrids250-v2017_BGRvector_newAllv.nc`, which is accampagnying the ["Experimental FZJ ParFlow DE06 hydrologic forecasts"](https://doi.org/10.26165/JUELICH-DATA/GROHKP) data.
    
 ### Usage example
 
@@ -139,10 +139,10 @@ Alternatively to 4.: Click on "HTTPServer" to download the complete netCDF file 
 
 ## Limitations
 
-- The ParFlow DE06 experimental forecast dataset also includes ensemble data; these cannot be used unless the `variable` is manually specified in the code of `data_extraction_tool.py`.
-- Different variables which different time spans which can't be covered in one query. Therefore, when dealing with different time spans (e.g., a variable from climatology_v2 and one from a forecast_daily), it is necessary to create a separate query for each.
-- If intending to use the tool beyond the foreseen applicaiton with the ParFlow post-processed netCDF files files, these files need to be CF compliant and follow certain standard in terms of specification of the dimensions and coordinate axes specifications.
-- If one is using near real time forecast data, one needs to continuosly adapt the `simData` entry in the JSON runcontrol file as the THREDDS server is a rolling archive and the forecast outputs have their initial date and time in the netCDF filename. 
+- The ParFlow DE06 experimental forecast dataset also includes ensemble data; because theese files contain more than one data variable, one needs to manually set the desired `variable` in the code of `data_extraction_tool.py`.
+- If different variables or netCDF input files cover different time spans those can't be covered in one query (i.e., be out into a single JSON file). Therefore, when dealing with different time spans (e.g., a variable from climatology_v2 with 365 days and one from a forecast_daily with 9 days), it is necessary to create a separate query (i.e., JSON file) for each.
+- If intending to use the tool beyond the foreseen applicaiton with the ParFlow post-processed netCDF files files, these files need to be CF compliant and follow certain standards in terms of the specification of the dimensions and the coordinate axes.
+- **If one is using near real time forecast data, one needs to continuosly adapt the `simData` entry in the JSON runcontrol file as the THREDDS server is a rolling archive and the forecast outputs have their initial date and time in the netCDF filename.**
 
 ## License
 
