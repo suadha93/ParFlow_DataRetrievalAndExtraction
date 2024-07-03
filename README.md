@@ -19,7 +19,7 @@ We developed and tested the tool under Linux and macOS.
 ### Obtain code
 
 ``` bash
-git clone https://github.com/kgoergen/ParFlow_data_extraction_tool.git
+https://github.com/HPSCTerrSys/ParFlow_DataRetrievalAndExtraction.git
 ```
 
 No environmental settings are needed.
