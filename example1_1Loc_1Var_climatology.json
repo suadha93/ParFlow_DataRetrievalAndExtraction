@@ -5,21 +5,21 @@
             "locationID": "example1_site1_close_to_juelich",
             "locationLat": 50.80240,
             "locationLon": 6.61029,
-            "simData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v2/vwc_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v02bJurecaGpuProdClimatologyTl_1day_20170101-20171231.nc",
+            "simData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v03/vwc_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v03bJuwelsGpuProdClimatologyTl_1day_20170101-20171231.nc",
             "depth": 0.2
         },
         {
             "locationID": "example1_site1_close_to_juelich",
             "locationLat": 50.80240,
             "locationLon": 6.61029,
-            "simData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v2/vwc_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v02bJurecaGpuProdClimatologyTl_1day_20180101-20181231.nc",
+            "simData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v03/vwc_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v03bJuwelsGpuProdClimatologyTl_1day_20180101-20181231.nc",
             "depth": 0.2
         },
         {
             "locationID": "example1_site1_close_to_juelich",
             "locationLat": 50.80240,
             "locationLon": 6.61029,
-            "simData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v2/vwc_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v02bJurecaGpuProdClimatologyTl_1day_20190101-20191231.nc",
+            "simData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v03/vwc_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v03bJuwelsGpuProdClimatologyTl_1day_20190101-20191231.nc",
             "depth": 0.2
         }
     ]
