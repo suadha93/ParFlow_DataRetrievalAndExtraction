@@ -5,21 +5,21 @@
             "locationID": "example4_site1",
             "locationLat": 51.00000,
             "locationLon": 6.50000,
-            "simData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v2/vwc_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v02bJurecaGpuProdClimatologyTl_1day_20230101-20231231.nc",
+            "simData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v03/vwc_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v03bJuwelsGpuProdClimatologyTl_1day_20230101-20231231.nc",
             "depth": 0.3
         },
         {
             "locationID": "example4_site2",
             "locationLat": 51.00000,
             "locationLon": 6.50000,
-            "simData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v2/sss_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v02bJurecaGpuProdClimatologyTl_1day_20230101-20231231.nc",
+            "simData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v03/sss_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v03bJuwelsGpuProdClimatologyTl_1day_20230101-20231231.nc",
             "depth": 0.3
         },
         {
             "locationID": "example4_site3",
             "locationLat": 51.00000,
             "locationLon": 6.50000,
-            "simData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v2/ifl_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v02bJurecaGpuProdClimatologyTl_1day_20230101-20231231.nc",
+            "simData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/climatology_v03/ifl_DE05_ECMWF-HRES_hindcast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-h00-v03bJuwelsGpuProdClimatologyTl_1day_20230101-20231231.nc",
             "depth": 0.3
         }
     ]
