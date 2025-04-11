@@ -5,21 +5,21 @@
             "locationID": "example8_site1",
             "locationLat": 46.00000, 
             "locationLon": 11.00000,
-            "simData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/forecasts_daily/vwc_DE05_ECMWF-HRES_forecast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-d00-v4_1day_2024062412.0012-0240.nc",
+            "simData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/forecasts_daily/vwc_DE05_ECMWF-HRES_forecast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-d00-v05_1day_2025040912.0012-0228.nc",
             "depth": 0.3
         },
         {
             "locationID": "example8_site2",
             "locationLat": 46.00000, 
             "locationLon": 11.00000,
-            "simData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/forecasts_daily/vsf_DE05_ECMWF-HRES_forecast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-d00-v4_1day_2024062412.0012-0240.nc",
+            "simData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/forecasts_daily/vsf_DE05_ECMWF-HRES_forecast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-d00-v05_1day_2025040912.0012-0228.nc",
             "depth": 0.3
         },
         {
             "locationID": "example8_site3",
             "locationLat": 46.00000, 
             "locationLon": 11.00000,
-            "simData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/forecasts_daily/tet_DE05_ECMWF-HRES_forecast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-d00-v4_1day_2024062412.0012-0240.nc",
+            "simData": "https://service.tereno.net/thredds/dodsC/forecastnrw/products/forecasts_daily/tet_DE05_ECMWF-HRES_forecast_r1i1p2_FZJ-IBG3-ParFlowCLM380_hgfadapter-d00-v05_1day_2025040912.0012-0228.nc",
             "depth": 0.3 
         }
     ]
